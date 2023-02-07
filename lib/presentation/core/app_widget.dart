@@ -38,6 +38,18 @@ class AppWidget extends StatelessWidget {
                 bodySmall: GoogleFonts.getFont('Lato')
                     .copyWith(color: const Color(0xFF7C7C7C), fontSize: 12),
               ),
+              colorScheme: const ColorScheme(
+                  brightness: Brightness.light,
+                  primary: Color(0xFFFE5152),
+                  onPrimary: Color(0xFFFE5152),
+                  secondary: Colors.white,
+                  onSecondary: Colors.white,
+                  error: Colors.red,
+                  onError: Colors.red,
+                  background: Colors.white,
+                  onBackground: Colors.white,
+                  surface: Color(0xFF969595),
+                  onSurface: Color(0xFF969595)),
               primaryColorDark: const Color(0xFFFE5152),
               primaryColorLight: const Color(0xFFFE5152),
               primaryColor: const Color(0xFFFE5152),
@@ -55,6 +67,8 @@ class AppWidget extends StatelessWidget {
               floatingActionButtonTheme: const FloatingActionButtonThemeData(
                   backgroundColor: Color(0xFFFF8082)),
               inputDecorationTheme: const InputDecorationTheme(
+                // suffixIconColor: Color(0xFFFE5152),
+                focusColor: Color(0xFFFE5152),
                 focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Color(0xFFFE5152))),
               )),

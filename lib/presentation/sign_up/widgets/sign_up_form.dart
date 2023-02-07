@@ -3,11 +3,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grocery_app/application/auth/sign_in_form/sign_in_form_bloc.dart';
-import 'package:grocery_app/presentation/core/auth_bottom_bar.dart';
 import 'package:grocery_app/presentation/core/button.dart';
 import 'package:grocery_app/presentation/route/router.gr.dart';
 
 import '../../../application/auth/auth_bloc.dart';
+import '../../core/progress_indicator.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({super.key});
@@ -43,7 +43,7 @@ class SignUpForm extends StatelessWidget {
       builder: (context, state) {
         return Padding(
           padding: const EdgeInsets.only(
-            top: 20,
+            top: 10,
           ),
           child: Form(
             autovalidateMode:
@@ -77,7 +77,7 @@ class SignUpForm extends StatelessWidget {
                         height: 10,
                       ),
                       TextFormField(
-                        cursorColor: const Color(0xFFFE5152),
+                        cursorColor: Theme.of(context).primaryColor,
                         style: Theme.of(context).textTheme.bodyMedium,
                         decoration: InputDecoration(
                             label: Text(
@@ -106,7 +106,7 @@ class SignUpForm extends StatelessWidget {
                         height: 20,
                       ),
                       TextFormField(
-                        cursorColor: const Color(0xFFFE5152),
+                        cursorColor: Theme.of(context).primaryColor,
                         style: Theme.of(context).textTheme.bodyMedium,
                         decoration: InputDecoration(
                             label: Text(
@@ -135,7 +135,7 @@ class SignUpForm extends StatelessWidget {
                         height: 20,
                       ),
                       TextFormField(
-                        cursorColor: const Color(0xFFFE5152),
+                        cursorColor: Theme.of(context).primaryColor,
                         style: Theme.of(context).textTheme.bodyMedium,
                         decoration: InputDecoration(
                             label: Text(
@@ -165,14 +165,15 @@ class SignUpForm extends StatelessWidget {
                         height: 20,
                       ),
                       TextFormField(
-                        cursorColor: const Color(0xFFFE5152),
+                        cursorColor: Theme.of(context).primaryColor,
                         style: Theme.of(context).textTheme.bodyMedium,
                         obscureText: true,
                         decoration: InputDecoration(
                             suffixIcon: const Icon(
                               Icons.visibility,
-                              color: Color(0xFFFE5152),
+                              size: 20,
                             ),
+                            focusColor: Theme.of(context).primaryColor,
                             label: Text(
                               'Password',
                               style: Theme.of(context).textTheme.bodySmall,
@@ -210,7 +211,8 @@ class SignUpForm extends StatelessWidget {
                                         .textTheme
                                         .bodySmall
                                         ?.copyWith(
-                                            color: const Color(0xFFFE5152))),
+                                            color: Theme.of(context)
+                                                .primaryColor)),
                                 TextSpan(
                                   text: ' and',
                                   style: Theme.of(context).textTheme.bodySmall,
@@ -221,7 +223,8 @@ class SignUpForm extends StatelessWidget {
                                         .textTheme
                                         .bodySmall
                                         ?.copyWith(
-                                            color: const Color(0xFFFE5152))),
+                                            color: Theme.of(context)
+                                                .primaryColor)),
                               ])),
                         ],
                       ),
@@ -229,11 +232,9 @@ class SignUpForm extends StatelessWidget {
                         const SizedBox(
                           height: 8,
                         ),
-                        const LinearProgressIndicator(
-                          backgroundColor: Colors.white,
-                          color: Color(0xFFFE5152),
-                          value: null,
-                        ),
+                        const CustomProgressIndicator(
+                          showCircular: false,
+                        )
                       ],
                       const SizedBox(
                         height: 20,
@@ -248,9 +249,10 @@ class SignUpForm extends StatelessWidget {
                     ],
                   ),
                 ),
-                AuthBottomBar(
-                  height: MediaQuery.of(context).size.height * 0.12,
-                  bottomWidget: Center(
+                SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 30,
+                  child: Center(
                     child: GestureDetector(
                       onTap: () => context.navigateTo(const SignInRoute()),
                       child: RichText(
@@ -264,7 +266,7 @@ class SignUpForm extends StatelessWidget {
                                   .textTheme
                                   .bodySmall
                                   ?.copyWith(
-                                    color: const Color(0xFFFE5152),
+                                    color: Theme.of(context).primaryColor,
                                   ),
                             ),
                           ],

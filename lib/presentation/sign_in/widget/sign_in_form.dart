@@ -7,6 +7,7 @@ import 'package:grocery_app/presentation/route/router.gr.dart';
 import '../../../application/auth/auth_bloc.dart';
 import '../../../application/auth/sign_in_form/sign_in_form_bloc.dart';
 import '../../core/button.dart';
+import '../../core/progress_indicator.dart';
 
 class SignInForm extends StatelessWidget {
   const SignInForm({super.key});
@@ -66,7 +67,7 @@ class SignInForm extends StatelessWidget {
                   height: 20,
                 ),
                 TextFormField(
-                  cursorColor: const Color(0xFFFE5152),
+                  cursorColor: Theme.of(context).primaryColor,
                   style: Theme.of(context).textTheme.bodyMedium,
                   decoration: InputDecoration(
                       label: Text(
@@ -94,13 +95,18 @@ class SignInForm extends StatelessWidget {
                   height: 20,
                 ),
                 TextFormField(
-                  cursorColor: const Color(0xFFFE5152),
+                  cursorColor: Theme.of(context).primaryColor,
                   style: Theme.of(context).textTheme.bodyMedium,
+                  obscureText: true,
                   decoration: InputDecoration(
+                      suffixIcon: const Icon(
+                        Icons.visibility,
+                        size: 20,
+                      ),
                       label: Text(
-                    'Password',
-                    style: Theme.of(context).textTheme.bodySmall,
-                  )),
+                        'Password',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      )),
                   autocorrect: false,
                   onChanged: (value) => context
                       .read<SignInFormBloc>()
@@ -126,11 +132,9 @@ class SignInForm extends StatelessWidget {
                   const SizedBox(
                     height: 8,
                   ),
-                  const LinearProgressIndicator(
-                    backgroundColor: Colors.white,
-                    color: Color(0xFFFE5152),
-                    value: null,
-                  ),
+                  const CustomProgressIndicator(
+                    showCircular: false,
+                  )
                 ],
                 const SizedBox(
                   height: 20,
@@ -154,7 +158,7 @@ class SignInForm extends StatelessWidget {
                             text: ' Sign Up',
                             style:
                                 Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      color: const Color(0xFFFE5152),
+                                      color: Theme.of(context).primaryColor,
                                     ),
                           ),
                         ],
