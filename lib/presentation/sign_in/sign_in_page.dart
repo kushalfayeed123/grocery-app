@@ -12,9 +12,9 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
-        preferredSize: Size(100, 100),
-        child: AuthAppBar(),
+      appBar: PreferredSize(
+        preferredSize: Size(100, MediaQuery.of(context).size.height * 0.2),
+        child: const AuthAppBar(),
       ),
       body: BlocProvider(
         create: (context) => getIt<SignInFormBloc>(),

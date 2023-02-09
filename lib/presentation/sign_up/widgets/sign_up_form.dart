@@ -64,7 +64,7 @@ class SignUpForm extends StatelessWidget {
                       ),
                       Text(
                         'Enter your credentials to continue',
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                     ],
                   ),
@@ -78,11 +78,12 @@ class SignUpForm extends StatelessWidget {
                       ),
                       TextFormField(
                         cursorColor: Theme.of(context).primaryColor,
+                        keyboardType: TextInputType.name,
                         style: Theme.of(context).textTheme.bodyMedium,
                         decoration: InputDecoration(
                             label: Text(
                           'First Name',
-                          style: Theme.of(context).textTheme.bodySmall,
+                          style: Theme.of(context).textTheme.bodyMedium,
                         )),
                         autocorrect: false,
                         onChanged: (value) => context
@@ -107,11 +108,12 @@ class SignUpForm extends StatelessWidget {
                       ),
                       TextFormField(
                         cursorColor: Theme.of(context).primaryColor,
+                        keyboardType: TextInputType.name,
                         style: Theme.of(context).textTheme.bodyMedium,
                         decoration: InputDecoration(
                             label: Text(
                           'Last Name',
-                          style: Theme.of(context).textTheme.bodySmall,
+                          style: Theme.of(context).textTheme.bodyMedium,
                         )),
                         autocorrect: false,
                         onChanged: (value) => context
@@ -136,11 +138,12 @@ class SignUpForm extends StatelessWidget {
                       ),
                       TextFormField(
                         cursorColor: Theme.of(context).primaryColor,
+                        keyboardType: TextInputType.emailAddress,
                         style: Theme.of(context).textTheme.bodyMedium,
                         decoration: InputDecoration(
                             label: Text(
                           'Email',
-                          style: Theme.of(context).textTheme.bodySmall,
+                          style: Theme.of(context).textTheme.bodyMedium,
                         )),
                         autocorrect: false,
                         onChanged: (value) {
@@ -166,17 +169,24 @@ class SignUpForm extends StatelessWidget {
                       ),
                       TextFormField(
                         cursorColor: Theme.of(context).primaryColor,
+                        keyboardType: TextInputType.text,
                         style: Theme.of(context).textTheme.bodyMedium,
-                        obscureText: true,
+                        obscureText: !state.showPassword,
                         decoration: InputDecoration(
-                            suffixIcon: const Icon(
-                              Icons.visibility,
-                              size: 20,
+                            suffixIcon: GestureDetector(
+                              onTap: () => context.read<SignInFormBloc>().add(
+                                  SignInFormEvent.showPasswordChanged(
+                                      !state.showPassword)),
+                              child: Icon(
+                                !state.showPassword
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                                size: 20,
+                              ),
                             ),
-                            focusColor: Theme.of(context).primaryColor,
                             label: Text(
                               'Password',
-                              style: Theme.of(context).textTheme.bodySmall,
+                              style: Theme.of(context).textTheme.bodyMedium,
                             )),
                         autocorrect: false,
                         onChanged: (value) => context
@@ -203,25 +213,25 @@ class SignUpForm extends StatelessWidget {
                           RichText(
                               text: TextSpan(
                                   text: 'By continuing you agree to our',
-                                  style: Theme.of(context).textTheme.bodySmall,
+                                  style: Theme.of(context).textTheme.bodyMedium,
                                   children: [
                                 TextSpan(
                                     text: 'Terms of Service',
                                     style: Theme.of(context)
                                         .textTheme
-                                        .bodySmall
+                                        .bodyMedium
                                         ?.copyWith(
                                             color: Theme.of(context)
                                                 .primaryColor)),
                                 TextSpan(
                                   text: ' and',
-                                  style: Theme.of(context).textTheme.bodySmall,
+                                  style: Theme.of(context).textTheme.bodyMedium,
                                 ),
                                 TextSpan(
                                     text: ' Privacy Policy',
                                     style: Theme.of(context)
                                         .textTheme
-                                        .bodySmall
+                                        .bodyMedium
                                         ?.copyWith(
                                             color: Theme.of(context)
                                                 .primaryColor)),
@@ -249,28 +259,27 @@ class SignUpForm extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: 30,
-                  child: Center(
-                    child: GestureDetector(
-                      onTap: () => context.navigateTo(const SignInRoute()),
-                      child: RichText(
-                        text: TextSpan(
-                          text: 'Already have an account?',
-                          style: Theme.of(context).textTheme.bodySmall,
-                          children: [
-                            TextSpan(
-                              text: ' Sign In',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall
-                                  ?.copyWith(
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                            ),
-                          ],
-                        ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Center(
+                  child: GestureDetector(
+                    onTap: () => context.navigateTo(const SignInRoute()),
+                    child: RichText(
+                      text: TextSpan(
+                        text: 'Already have an account?',
+                        style: Theme.of(context).textTheme.bodyMedium,
+                        children: [
+                          TextSpan(
+                            text: ' Sign In',
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(
+                                  color: Theme.of(context).primaryColor,
+                                ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

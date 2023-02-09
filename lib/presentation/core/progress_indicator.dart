@@ -6,7 +6,7 @@ class CustomProgressIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return showCircular
+    return !showCircular
         ? LinearProgressIndicator(
             backgroundColor: Colors.white,
             color: Theme.of(context).primaryColor,

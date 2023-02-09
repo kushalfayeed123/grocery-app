@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SignInFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool showPassword) showPasswordChanged,
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String firstNameStr) firstNameChanged,
     required TResult Function(String lastNameStr) lastNameChanged,
@@ -29,6 +30,7 @@ mixin _$SignInFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool showPassword)? showPasswordChanged,
     TResult? Function(String emailStr)? emailChanged,
     TResult? Function(String firstNameStr)? firstNameChanged,
     TResult? Function(String lastNameStr)? lastNameChanged,
@@ -40,6 +42,7 @@ mixin _$SignInFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool showPassword)? showPasswordChanged,
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String firstNameStr)? firstNameChanged,
     TResult Function(String lastNameStr)? lastNameChanged,
@@ -52,6 +55,7 @@ mixin _$SignInFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ShowPasswordChanged value) showPasswordChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(FirstNameChanged value) firstNameChanged,
     required TResult Function(LastNameChange value) lastNameChanged,
@@ -66,6 +70,7 @@ mixin _$SignInFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult? Function(EmailChanged value)? emailChanged,
     TResult? Function(FirstNameChanged value)? firstNameChanged,
     TResult? Function(LastNameChange value)? lastNameChanged,
@@ -79,6 +84,7 @@ mixin _$SignInFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(FirstNameChanged value)? firstNameChanged,
     TResult Function(LastNameChange value)? lastNameChanged,
@@ -109,6 +115,185 @@ class _$SignInFormEventCopyWithImpl<$Res, $Val extends SignInFormEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$ShowPasswordChangedCopyWith<$Res> {
+  factory _$$ShowPasswordChangedCopyWith(_$ShowPasswordChanged value,
+          $Res Function(_$ShowPasswordChanged) then) =
+      __$$ShowPasswordChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool showPassword});
+}
+
+/// @nodoc
+class __$$ShowPasswordChangedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res, _$ShowPasswordChanged>
+    implements _$$ShowPasswordChangedCopyWith<$Res> {
+  __$$ShowPasswordChangedCopyWithImpl(
+      _$ShowPasswordChanged _value, $Res Function(_$ShowPasswordChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? showPassword = null,
+  }) {
+    return _then(_$ShowPasswordChanged(
+      null == showPassword
+          ? _value.showPassword
+          : showPassword // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ShowPasswordChanged implements ShowPasswordChanged {
+  const _$ShowPasswordChanged(this.showPassword);
+
+  @override
+  final bool showPassword;
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.showPasswordChanged(showPassword: $showPassword)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ShowPasswordChanged &&
+            (identical(other.showPassword, showPassword) ||
+                other.showPassword == showPassword));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, showPassword);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ShowPasswordChangedCopyWith<_$ShowPasswordChanged> get copyWith =>
+      __$$ShowPasswordChangedCopyWithImpl<_$ShowPasswordChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(bool showPassword) showPasswordChanged,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String firstNameStr) firstNameChanged,
+    required TResult Function(String lastNameStr) lastNameChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() registerWithEmailAndPassword,
+    required TResult Function() signInWithEmailAndPassword,
+    required TResult Function() signInWithGooglePressed,
+  }) {
+    return showPasswordChanged(showPassword);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool showPassword)? showPasswordChanged,
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String firstNameStr)? firstNameChanged,
+    TResult? Function(String lastNameStr)? lastNameChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function()? registerWithEmailAndPassword,
+    TResult? Function()? signInWithEmailAndPassword,
+    TResult? Function()? signInWithGooglePressed,
+  }) {
+    return showPasswordChanged?.call(showPassword);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool showPassword)? showPasswordChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String firstNameStr)? firstNameChanged,
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? registerWithEmailAndPassword,
+    TResult Function()? signInWithEmailAndPassword,
+    TResult Function()? signInWithGooglePressed,
+    required TResult orElse(),
+  }) {
+    if (showPasswordChanged != null) {
+      return showPasswordChanged(showPassword);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ShowPasswordChanged value) showPasswordChanged,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(FirstNameChanged value) firstNameChanged,
+    required TResult Function(LastNameChange value) lastNameChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(RegisterWithEmailAndPassword value)
+        registerWithEmailAndPassword,
+    required TResult Function(SignInWithEmailAndPassword value)
+        signInWithEmailAndPassword,
+    required TResult Function(SignInWithGooglePressed value)
+        signInWithGooglePressed,
+  }) {
+    return showPasswordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ShowPasswordChanged value)? showPasswordChanged,
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(FirstNameChanged value)? firstNameChanged,
+    TResult? Function(LastNameChange value)? lastNameChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(RegisterWithEmailAndPassword value)?
+        registerWithEmailAndPassword,
+    TResult? Function(SignInWithEmailAndPassword value)?
+        signInWithEmailAndPassword,
+    TResult? Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+  }) {
+    return showPasswordChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ShowPasswordChanged value)? showPasswordChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(FirstNameChanged value)? firstNameChanged,
+    TResult Function(LastNameChange value)? lastNameChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(RegisterWithEmailAndPassword value)?
+        registerWithEmailAndPassword,
+    TResult Function(SignInWithEmailAndPassword value)?
+        signInWithEmailAndPassword,
+    TResult Function(SignInWithGooglePressed value)? signInWithGooglePressed,
+    required TResult orElse(),
+  }) {
+    if (showPasswordChanged != null) {
+      return showPasswordChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShowPasswordChanged implements SignInFormEvent {
+  const factory ShowPasswordChanged(final bool showPassword) =
+      _$ShowPasswordChanged;
+
+  bool get showPassword;
+  @JsonKey(ignore: true)
+  _$$ShowPasswordChangedCopyWith<_$ShowPasswordChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -176,6 +361,7 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool showPassword) showPasswordChanged,
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String firstNameStr) firstNameChanged,
     required TResult Function(String lastNameStr) lastNameChanged,
@@ -190,6 +376,7 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool showPassword)? showPasswordChanged,
     TResult? Function(String emailStr)? emailChanged,
     TResult? Function(String firstNameStr)? firstNameChanged,
     TResult? Function(String lastNameStr)? lastNameChanged,
@@ -204,6 +391,7 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool showPassword)? showPasswordChanged,
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String firstNameStr)? firstNameChanged,
     TResult Function(String lastNameStr)? lastNameChanged,
@@ -222,6 +410,7 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ShowPasswordChanged value) showPasswordChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(FirstNameChanged value) firstNameChanged,
     required TResult Function(LastNameChange value) lastNameChanged,
@@ -239,6 +428,7 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult? Function(EmailChanged value)? emailChanged,
     TResult? Function(FirstNameChanged value)? firstNameChanged,
     TResult? Function(LastNameChange value)? lastNameChanged,
@@ -255,6 +445,7 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(FirstNameChanged value)? firstNameChanged,
     TResult Function(LastNameChange value)? lastNameChanged,
@@ -347,6 +538,7 @@ class _$FirstNameChanged implements FirstNameChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool showPassword) showPasswordChanged,
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String firstNameStr) firstNameChanged,
     required TResult Function(String lastNameStr) lastNameChanged,
@@ -361,6 +553,7 @@ class _$FirstNameChanged implements FirstNameChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool showPassword)? showPasswordChanged,
     TResult? Function(String emailStr)? emailChanged,
     TResult? Function(String firstNameStr)? firstNameChanged,
     TResult? Function(String lastNameStr)? lastNameChanged,
@@ -375,6 +568,7 @@ class _$FirstNameChanged implements FirstNameChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool showPassword)? showPasswordChanged,
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String firstNameStr)? firstNameChanged,
     TResult Function(String lastNameStr)? lastNameChanged,
@@ -393,6 +587,7 @@ class _$FirstNameChanged implements FirstNameChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ShowPasswordChanged value) showPasswordChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(FirstNameChanged value) firstNameChanged,
     required TResult Function(LastNameChange value) lastNameChanged,
@@ -410,6 +605,7 @@ class _$FirstNameChanged implements FirstNameChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult? Function(EmailChanged value)? emailChanged,
     TResult? Function(FirstNameChanged value)? firstNameChanged,
     TResult? Function(LastNameChange value)? lastNameChanged,
@@ -426,6 +622,7 @@ class _$FirstNameChanged implements FirstNameChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(FirstNameChanged value)? firstNameChanged,
     TResult Function(LastNameChange value)? lastNameChanged,
@@ -519,6 +716,7 @@ class _$LastNameChange implements LastNameChange {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool showPassword) showPasswordChanged,
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String firstNameStr) firstNameChanged,
     required TResult Function(String lastNameStr) lastNameChanged,
@@ -533,6 +731,7 @@ class _$LastNameChange implements LastNameChange {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool showPassword)? showPasswordChanged,
     TResult? Function(String emailStr)? emailChanged,
     TResult? Function(String firstNameStr)? firstNameChanged,
     TResult? Function(String lastNameStr)? lastNameChanged,
@@ -547,6 +746,7 @@ class _$LastNameChange implements LastNameChange {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool showPassword)? showPasswordChanged,
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String firstNameStr)? firstNameChanged,
     TResult Function(String lastNameStr)? lastNameChanged,
@@ -565,6 +765,7 @@ class _$LastNameChange implements LastNameChange {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ShowPasswordChanged value) showPasswordChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(FirstNameChanged value) firstNameChanged,
     required TResult Function(LastNameChange value) lastNameChanged,
@@ -582,6 +783,7 @@ class _$LastNameChange implements LastNameChange {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult? Function(EmailChanged value)? emailChanged,
     TResult? Function(FirstNameChanged value)? firstNameChanged,
     TResult? Function(LastNameChange value)? lastNameChanged,
@@ -598,6 +800,7 @@ class _$LastNameChange implements LastNameChange {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(FirstNameChanged value)? firstNameChanged,
     TResult Function(LastNameChange value)? lastNameChanged,
@@ -690,6 +893,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool showPassword) showPasswordChanged,
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String firstNameStr) firstNameChanged,
     required TResult Function(String lastNameStr) lastNameChanged,
@@ -704,6 +908,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool showPassword)? showPasswordChanged,
     TResult? Function(String emailStr)? emailChanged,
     TResult? Function(String firstNameStr)? firstNameChanged,
     TResult? Function(String lastNameStr)? lastNameChanged,
@@ -718,6 +923,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool showPassword)? showPasswordChanged,
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String firstNameStr)? firstNameChanged,
     TResult Function(String lastNameStr)? lastNameChanged,
@@ -736,6 +942,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ShowPasswordChanged value) showPasswordChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(FirstNameChanged value) firstNameChanged,
     required TResult Function(LastNameChange value) lastNameChanged,
@@ -753,6 +960,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult? Function(EmailChanged value)? emailChanged,
     TResult? Function(FirstNameChanged value)? firstNameChanged,
     TResult? Function(LastNameChange value)? lastNameChanged,
@@ -769,6 +977,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(FirstNameChanged value)? firstNameChanged,
     TResult Function(LastNameChange value)? lastNameChanged,
@@ -837,6 +1046,7 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool showPassword) showPasswordChanged,
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String firstNameStr) firstNameChanged,
     required TResult Function(String lastNameStr) lastNameChanged,
@@ -851,6 +1061,7 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool showPassword)? showPasswordChanged,
     TResult? Function(String emailStr)? emailChanged,
     TResult? Function(String firstNameStr)? firstNameChanged,
     TResult? Function(String lastNameStr)? lastNameChanged,
@@ -865,6 +1076,7 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool showPassword)? showPasswordChanged,
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String firstNameStr)? firstNameChanged,
     TResult Function(String lastNameStr)? lastNameChanged,
@@ -883,6 +1095,7 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ShowPasswordChanged value) showPasswordChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(FirstNameChanged value) firstNameChanged,
     required TResult Function(LastNameChange value) lastNameChanged,
@@ -900,6 +1113,7 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult? Function(EmailChanged value)? emailChanged,
     TResult? Function(FirstNameChanged value)? firstNameChanged,
     TResult? Function(LastNameChange value)? lastNameChanged,
@@ -916,6 +1130,7 @@ class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(FirstNameChanged value)? firstNameChanged,
     TResult Function(LastNameChange value)? lastNameChanged,
@@ -979,6 +1194,7 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool showPassword) showPasswordChanged,
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String firstNameStr) firstNameChanged,
     required TResult Function(String lastNameStr) lastNameChanged,
@@ -993,6 +1209,7 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool showPassword)? showPasswordChanged,
     TResult? Function(String emailStr)? emailChanged,
     TResult? Function(String firstNameStr)? firstNameChanged,
     TResult? Function(String lastNameStr)? lastNameChanged,
@@ -1007,6 +1224,7 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool showPassword)? showPasswordChanged,
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String firstNameStr)? firstNameChanged,
     TResult Function(String lastNameStr)? lastNameChanged,
@@ -1025,6 +1243,7 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ShowPasswordChanged value) showPasswordChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(FirstNameChanged value) firstNameChanged,
     required TResult Function(LastNameChange value) lastNameChanged,
@@ -1042,6 +1261,7 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult? Function(EmailChanged value)? emailChanged,
     TResult? Function(FirstNameChanged value)? firstNameChanged,
     TResult? Function(LastNameChange value)? lastNameChanged,
@@ -1058,6 +1278,7 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(FirstNameChanged value)? firstNameChanged,
     TResult Function(LastNameChange value)? lastNameChanged,
@@ -1119,6 +1340,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(bool showPassword) showPasswordChanged,
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String firstNameStr) firstNameChanged,
     required TResult Function(String lastNameStr) lastNameChanged,
@@ -1133,6 +1355,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(bool showPassword)? showPasswordChanged,
     TResult? Function(String emailStr)? emailChanged,
     TResult? Function(String firstNameStr)? firstNameChanged,
     TResult? Function(String lastNameStr)? lastNameChanged,
@@ -1147,6 +1370,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(bool showPassword)? showPasswordChanged,
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String firstNameStr)? firstNameChanged,
     TResult Function(String lastNameStr)? lastNameChanged,
@@ -1165,6 +1389,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ShowPasswordChanged value) showPasswordChanged,
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(FirstNameChanged value) firstNameChanged,
     required TResult Function(LastNameChange value) lastNameChanged,
@@ -1182,6 +1407,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult? Function(EmailChanged value)? emailChanged,
     TResult? Function(FirstNameChanged value)? firstNameChanged,
     TResult? Function(LastNameChange value)? lastNameChanged,
@@ -1198,6 +1424,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ShowPasswordChanged value)? showPasswordChanged,
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(FirstNameChanged value)? firstNameChanged,
     TResult Function(LastNameChange value)? lastNameChanged,
@@ -1226,6 +1453,7 @@ mixin _$SignInFormState {
   Password get password => throw _privateConstructorUsedError;
   AppUser get appUser => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get showPassword => throw _privateConstructorUsedError;
   AutovalidateMode get autovalidateMode => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get authFailureOrSuccess =>
       throw _privateConstructorUsedError;
@@ -1248,6 +1476,7 @@ abstract class $SignInFormStateCopyWith<$Res> {
       Password password,
       AppUser appUser,
       bool isSubmitting,
+      bool showPassword,
       AutovalidateMode autovalidateMode,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
       Option<Either<AppUserFailure, Unit>> saveFailureOrSuccessOption});
@@ -1272,6 +1501,7 @@ class _$SignInFormStateCopyWithImpl<$Res, $Val extends SignInFormState>
     Object? password = null,
     Object? appUser = null,
     Object? isSubmitting = null,
+    Object? showPassword = null,
     Object? autovalidateMode = null,
     Object? authFailureOrSuccess = null,
     Object? saveFailureOrSuccessOption = null,
@@ -1292,6 +1522,10 @@ class _$SignInFormStateCopyWithImpl<$Res, $Val extends SignInFormState>
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      showPassword: null == showPassword
+          ? _value.showPassword
+          : showPassword // ignore: cast_nullable_to_non_nullable
               as bool,
       autovalidateMode: null == autovalidateMode
           ? _value.autovalidateMode
@@ -1330,6 +1564,7 @@ abstract class _$$_SignInFormStateCopyWith<$Res>
       Password password,
       AppUser appUser,
       bool isSubmitting,
+      bool showPassword,
       AutovalidateMode autovalidateMode,
       Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
       Option<Either<AppUserFailure, Unit>> saveFailureOrSuccessOption});
@@ -1353,6 +1588,7 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
     Object? password = null,
     Object? appUser = null,
     Object? isSubmitting = null,
+    Object? showPassword = null,
     Object? autovalidateMode = null,
     Object? authFailureOrSuccess = null,
     Object? saveFailureOrSuccessOption = null,
@@ -1373,6 +1609,10 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      showPassword: null == showPassword
+          ? _value.showPassword
+          : showPassword // ignore: cast_nullable_to_non_nullable
               as bool,
       autovalidateMode: null == autovalidateMode
           ? _value.autovalidateMode
@@ -1398,6 +1638,7 @@ class _$_SignInFormState implements _SignInFormState {
       required this.password,
       required this.appUser,
       required this.isSubmitting,
+      required this.showPassword,
       required this.autovalidateMode,
       required this.authFailureOrSuccess,
       required this.saveFailureOrSuccessOption});
@@ -1411,6 +1652,8 @@ class _$_SignInFormState implements _SignInFormState {
   @override
   final bool isSubmitting;
   @override
+  final bool showPassword;
+  @override
   final AutovalidateMode autovalidateMode;
   @override
   final Option<Either<AuthFailure, Unit>> authFailureOrSuccess;
@@ -1419,7 +1662,7 @@ class _$_SignInFormState implements _SignInFormState {
 
   @override
   String toString() {
-    return 'SignInFormState(emailAddress: $emailAddress, password: $password, appUser: $appUser, isSubmitting: $isSubmitting, autovalidateMode: $autovalidateMode, authFailureOrSuccess: $authFailureOrSuccess, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'SignInFormState(emailAddress: $emailAddress, password: $password, appUser: $appUser, isSubmitting: $isSubmitting, showPassword: $showPassword, autovalidateMode: $autovalidateMode, authFailureOrSuccess: $authFailureOrSuccess, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
@@ -1434,6 +1677,8 @@ class _$_SignInFormState implements _SignInFormState {
             (identical(other.appUser, appUser) || other.appUser == appUser) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 other.isSubmitting == isSubmitting) &&
+            (identical(other.showPassword, showPassword) ||
+                other.showPassword == showPassword) &&
             (identical(other.autovalidateMode, autovalidateMode) ||
                 other.autovalidateMode == autovalidateMode) &&
             (identical(other.authFailureOrSuccess, authFailureOrSuccess) ||
@@ -1451,6 +1696,7 @@ class _$_SignInFormState implements _SignInFormState {
       password,
       appUser,
       isSubmitting,
+      showPassword,
       autovalidateMode,
       authFailureOrSuccess,
       saveFailureOrSuccessOption);
@@ -1468,6 +1714,7 @@ abstract class _SignInFormState implements SignInFormState {
       required final Password password,
       required final AppUser appUser,
       required final bool isSubmitting,
+      required final bool showPassword,
       required final AutovalidateMode autovalidateMode,
       required final Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
       required final Option<Either<AppUserFailure, Unit>>
@@ -1481,6 +1728,8 @@ abstract class _SignInFormState implements SignInFormState {
   AppUser get appUser;
   @override
   bool get isSubmitting;
+  @override
+  bool get showPassword;
   @override
   AutovalidateMode get autovalidateMode;
   @override

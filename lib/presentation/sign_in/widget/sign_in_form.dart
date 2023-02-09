@@ -59,7 +59,7 @@ class SignInForm extends StatelessWidget {
                     ),
                     Text(
                       'Enter your email and password',
-                      style: Theme.of(context).textTheme.bodySmall,
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ],
                 ),
@@ -68,11 +68,12 @@ class SignInForm extends StatelessWidget {
                 ),
                 TextFormField(
                   cursorColor: Theme.of(context).primaryColor,
+                  keyboardType: TextInputType.emailAddress,
                   style: Theme.of(context).textTheme.bodyMedium,
                   decoration: InputDecoration(
                       label: Text(
                     'Email',
-                    style: Theme.of(context).textTheme.bodySmall,
+                    style: Theme.of(context).textTheme.bodyMedium,
                   )),
                   autocorrect: false,
                   onChanged: (value) => context
@@ -96,16 +97,24 @@ class SignInForm extends StatelessWidget {
                 ),
                 TextFormField(
                   cursorColor: Theme.of(context).primaryColor,
+                  keyboardType: TextInputType.text,
                   style: Theme.of(context).textTheme.bodyMedium,
-                  obscureText: true,
+                  obscureText: !state.showPassword,
                   decoration: InputDecoration(
-                      suffixIcon: const Icon(
-                        Icons.visibility,
-                        size: 20,
+                      suffixIcon: GestureDetector(
+                        onTap: () => context.read<SignInFormBloc>().add(
+                            SignInFormEvent.showPasswordChanged(
+                                !state.showPassword)),
+                        child: Icon(
+                          !state.showPassword
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          size: 20,
+                        ),
                       ),
                       label: Text(
                         'Password',
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodyMedium,
                       )),
                   autocorrect: false,
                   onChanged: (value) => context
@@ -125,7 +134,7 @@ class SignInForm extends StatelessWidget {
                 ),
                 Text(
                   'Forgot Password?',
-                  style: Theme.of(context).textTheme.bodySmall,
+                  style: Theme.of(context).textTheme.bodyMedium,
                   textAlign: TextAlign.end,
                 ),
                 if (state.isSubmitting) ...[
@@ -152,14 +161,16 @@ class SignInForm extends StatelessWidget {
                     child: RichText(
                       text: TextSpan(
                         text: 'Don\'t have an account?',
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodyMedium,
                         children: [
                           TextSpan(
                             text: ' Sign Up',
-                            style:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      color: Theme.of(context).primaryColor,
-                                    ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(
+                                  color: Theme.of(context).primaryColor,
+                                ),
                           ),
                         ],
                       ),

@@ -32,10 +32,16 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
             autovalidateMode: AutovalidateMode.disabled,
             emailAddress: EmailAddress(''),
             isSubmitting: false,
+            showPassword: false,
             password: Password(''),
             saveFailureOrSuccessOption: none())) {
     on<SignInFormEvent>((event, emit) async {
       emit(await event.map(
+        showPasswordChanged: (e) {
+          return state.copyWith(
+            showPassword: e.showPassword,
+          );
+        },
         emailChanged: (e) => state.copyWith(
           emailAddress: EmailAddress(e.emailStr),
           appUser: state.appUser.copyWith(
@@ -44,7 +50,9 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
           authFailureOrSuccess: none(),
         ),
         passwordChanged: (e) => state.copyWith(
-            password: Password(e.passwordStr), authFailureOrSuccess: none()),
+          password: Password(e.passwordStr),
+          authFailureOrSuccess: none(),
+        ),
         firstNameChanged: (e) {
           emit(
             state.copyWith(

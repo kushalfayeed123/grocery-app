@@ -7,6 +7,7 @@ class SignInFormState with _$SignInFormState {
     required Password password,
     required AppUser appUser,
     required bool isSubmitting,
+    required bool showPassword,
     required AutovalidateMode autovalidateMode,
     required Option<Either<AuthFailure, Unit>> authFailureOrSuccess,
     required Option<Either<AppUserFailure, Unit>> saveFailureOrSuccessOption,

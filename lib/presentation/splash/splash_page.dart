@@ -15,7 +15,9 @@ class SplashPage extends StatelessWidget {
       listener: (context, state) {
         state.map(
           initial: (_) {},
-          authenticated: (_) {},
+          authenticated: (_) {
+            context.navigateTo(const SignInRoute());
+          },
           unAuthenticated: (_) => context.navigateTo(const SignInRoute()),
         );
       },

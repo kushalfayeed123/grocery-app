@@ -14,7 +14,7 @@ class AuthAppBar extends StatelessWidget {
       flexibleSpace: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/carrot_bg.png'),
+            image: AssetImage('assets/images/carrot_bg.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -24,7 +24,7 @@ class AuthAppBar extends StatelessWidget {
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
             child: Image.asset(
-              'images/carrot.png',
+              'assets/images/carrot.png',
               height: 100,
             ),
           ),
