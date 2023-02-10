@@ -1,15 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
-import 'package:grocery_app/domain/app_user/app_user_failure.dart';
+import '../../domain/app_user/app_user_failure.dart';
 
-import 'package:grocery_app/domain/app_user/app_user.dart';
+import '../../domain/app_user/app_user.dart';
 
 import 'package:dartz/dartz.dart';
-import 'package:grocery_app/infrastructure/app_user/app_user_dtos.dart';
+import 'app_user_dtos.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../domain/app_user/i_app_user_repository.dart';
-import 'package:grocery_app/infrastructure/core/firestore_helpers.dart';
+import '../core/firestore_helpers.dart';
 
 @LazySingleton(as: IAppUserRepository)
 class AppUserRepository implements IAppUserRepository {

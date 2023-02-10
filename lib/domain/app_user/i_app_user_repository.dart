@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:grocery_app/domain/app_user/app_user_failure.dart';
+import 'app_user_failure.dart';
 
 import 'app_user.dart';
 

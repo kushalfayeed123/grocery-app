@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:grocery_app/presentation/sign_up/widgets/sign_up_form.dart';
+import 'widgets/sign_up_form.dart';
 import '../../injection.dart';
 
 import '../../application/auth/sign_in_form/sign_in_form_bloc.dart';

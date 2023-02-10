@@ -1,0 +1,34 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+import '../core/value_object.dart';
+import 'value_objects.dart';
+part 'grocery_item.freezed.dart';
+
+@freezed
+abstract class GroceryItem implements _$GroceryItem {
+  const GroceryItem._();
+  const factory GroceryItem({
+    required UniqueId id,
+    required GroceryName name,
+    required GroceryDescription description,
+    required GroceryCategory category,
+    required ValidatedNumber quantity,
+    required ValidatedNumber budgetedPrice,
+    required ValidatedNumber actualPrice,
+    required String image,
+    required DateTime addedDate,
+    required bool isInCart,
+  }) = _GroceryItem;
+
+  factory GroceryItem.empty() => GroceryItem(
+        id: UniqueId(),
+        name: GroceryName(''),
+        quantity: ValidatedNumber(0),
+        budgetedPrice: ValidatedNumber(0),
+        actualPrice: ValidatedNumber(0),
+        image: '',
+        addedDate: DateTime.now(),
+        isInCart: false,
+        description: GroceryDescription(''),
+        category: GroceryCategory(''),
+      );
+}

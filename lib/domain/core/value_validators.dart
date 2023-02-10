@@ -13,6 +13,14 @@ Either<ValueFailure<String>, String> validateMaxStringLength(
   }
 }
 
+Either<ValueFailure<int>, int> validateNumber(int input) {
+  if (input >= 0) {
+    return right(input);
+  } else {
+    return left(ValueFailure.zeroNumber(failedValue: input));
+  }
+}
+
 Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
   if (input.isNotEmpty) {
     return right(input);
@@ -30,6 +38,16 @@ Either<ValueFailure<String>, String> validateEmailAddress(String input) {
     return right(input);
   } else {
     return left(ValueFailure.invalidEmail(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateSingleLine(String input) {
+  if (!input.contains('\n')) {
+    return right(input);
+  } else {
+    return left(
+      ValueFailure.multiline(failedValue: input),
+    );
   }
 }
 
