@@ -33,8 +33,12 @@ class AppWidget extends StatelessWidget {
                     color: const Color(0xFF000000),
                     fontSize: 26,
                     fontWeight: FontWeight.w700),
+                titleMedium: GoogleFonts.getFont('Poppins').copyWith(
+                    color: const Color(0xFF000000),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700),
                 bodyMedium: GoogleFonts.getFont('Poppins')
-                    .copyWith(color: const Color(0xFF000000), fontSize: 16),
+                    .copyWith(color: const Color(0xFF000000), fontSize: 14),
                 bodySmall: GoogleFonts.getFont('Poppins').copyWith(
                     color: const Color(0xFF7C7C7C),
                     fontSize: 14,
@@ -43,7 +47,7 @@ class AppWidget extends StatelessWidget {
               colorScheme: const ColorScheme(
                   brightness: Brightness.light,
                   primary: Color(0xFFFE5152),
-                  onPrimary: Color(0xFFFE5152),
+                  onPrimary: Colors.white,
                   secondary: Colors.white,
                   onSecondary: Colors.white,
                   error: Colors.red,

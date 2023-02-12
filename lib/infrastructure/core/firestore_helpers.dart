@@ -13,3 +13,7 @@ extension FirestoreX on FirebaseFirestore {
         .doc(user.id.getOrCrash());
   }
 }
+
+extension DocumentReferenceX on DocumentReference {
+  CollectionReference get sessionCollection => collection('sessions');
+}

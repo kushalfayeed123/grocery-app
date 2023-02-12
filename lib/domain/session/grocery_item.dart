@@ -1,4 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import '../core/failures.dart';
 import '../core/value_object.dart';
 import 'value_objects.dart';
 part 'grocery_item.freezed.dart';
@@ -31,4 +33,8 @@ abstract class GroceryItem implements _$GroceryItem {
         description: GroceryDescription(''),
         category: GroceryCategory(''),
       );
+
+  Option<ValueFailure<dynamic>> get failureOption {
+    return name.value.fold((f) => some(f), (_) => none());
+  }
 }

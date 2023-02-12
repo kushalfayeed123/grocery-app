@@ -150,6 +150,7 @@ class SignInForm extends StatelessWidget {
                 ),
                 CustomButton(
                     text: 'SIGN IN',
+                    width: MediaQuery.of(context).size.width,
                     onTap: () => context.read<SignInFormBloc>().add(
                         const SignInFormEvent.signInWithEmailAndPassword())),
                 const SizedBox(

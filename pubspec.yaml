@@ -24,6 +24,7 @@ dependencies:
   google_fonts: ^4.0.3
   google_sign_in: ^5.4.4
   injectable: ^2.1.0
+  intl: ^0.17.0
   json_annotation: ^4.8.0
   json_serializable: ^6.6.1
   kt_dart: ^1.0.0

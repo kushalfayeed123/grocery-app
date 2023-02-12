@@ -251,6 +251,7 @@ class SignUpForm extends StatelessWidget {
                       ),
                       CustomButton(
                           text: 'SIGN UP',
+                          width: MediaQuery.of(context).size.width,
                           onTap: () {
                             context.read<SignInFormBloc>().add(
                                 const SignInFormEvent

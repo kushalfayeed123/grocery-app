@@ -22,7 +22,7 @@ mixin _$Session {
   ValidatedNumber get totalActualPrice => throw _privateConstructorUsedError;
   DateTime get createdDate => throw _privateConstructorUsedError;
   DateTime get scheduledDate => throw _privateConstructorUsedError;
-  GList<GroceryItem> get groceryList => throw _privateConstructorUsedError;
+  GList<GroceryItem> get groceries => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SessionCopyWith<Session> get copyWith => throw _privateConstructorUsedError;
@@ -40,7 +40,7 @@ abstract class $SessionCopyWith<$Res> {
       ValidatedNumber totalActualPrice,
       DateTime createdDate,
       DateTime scheduledDate,
-      GList<GroceryItem> groceryList});
+      GList<GroceryItem> groceries});
 }
 
 /// @nodoc
@@ -62,7 +62,7 @@ class _$SessionCopyWithImpl<$Res, $Val extends Session>
     Object? totalActualPrice = null,
     Object? createdDate = null,
     Object? scheduledDate = null,
-    Object? groceryList = null,
+    Object? groceries = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -89,9 +89,9 @@ class _$SessionCopyWithImpl<$Res, $Val extends Session>
           ? _value.scheduledDate
           : scheduledDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      groceryList: null == groceryList
-          ? _value.groceryList
-          : groceryList // ignore: cast_nullable_to_non_nullable
+      groceries: null == groceries
+          ? _value.groceries
+          : groceries // ignore: cast_nullable_to_non_nullable
               as GList<GroceryItem>,
     ) as $Val);
   }
@@ -111,7 +111,7 @@ abstract class _$$_SessionCopyWith<$Res> implements $SessionCopyWith<$Res> {
       ValidatedNumber totalActualPrice,
       DateTime createdDate,
       DateTime scheduledDate,
-      GList<GroceryItem> groceryList});
+      GList<GroceryItem> groceries});
 }
 
 /// @nodoc
@@ -130,7 +130,7 @@ class __$$_SessionCopyWithImpl<$Res>
     Object? totalActualPrice = null,
     Object? createdDate = null,
     Object? scheduledDate = null,
-    Object? groceryList = null,
+    Object? groceries = null,
   }) {
     return _then(_$_Session(
       id: null == id
@@ -157,9 +157,9 @@ class __$$_SessionCopyWithImpl<$Res>
           ? _value.scheduledDate
           : scheduledDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      groceryList: null == groceryList
-          ? _value.groceryList
-          : groceryList // ignore: cast_nullable_to_non_nullable
+      groceries: null == groceries
+          ? _value.groceries
+          : groceries // ignore: cast_nullable_to_non_nullable
               as GList<GroceryItem>,
     ));
   }
@@ -175,7 +175,7 @@ class _$_Session extends _Session {
       required this.totalActualPrice,
       required this.createdDate,
       required this.scheduledDate,
-      required this.groceryList})
+      required this.groceries})
       : super._();
 
   @override
@@ -191,11 +191,11 @@ class _$_Session extends _Session {
   @override
   final DateTime scheduledDate;
   @override
-  final GList<GroceryItem> groceryList;
+  final GList<GroceryItem> groceries;
 
   @override
   String toString() {
-    return 'Session(id: $id, status: $status, totalBudgetedPrice: $totalBudgetedPrice, totalActualPrice: $totalActualPrice, createdDate: $createdDate, scheduledDate: $scheduledDate, groceryList: $groceryList)';
+    return 'Session(id: $id, status: $status, totalBudgetedPrice: $totalBudgetedPrice, totalActualPrice: $totalActualPrice, createdDate: $createdDate, scheduledDate: $scheduledDate, groceries: $groceries)';
   }
 
   @override
@@ -213,13 +213,13 @@ class _$_Session extends _Session {
                 other.createdDate == createdDate) &&
             (identical(other.scheduledDate, scheduledDate) ||
                 other.scheduledDate == scheduledDate) &&
-            (identical(other.groceryList, groceryList) ||
-                other.groceryList == groceryList));
+            (identical(other.groceries, groceries) ||
+                other.groceries == groceries));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, id, status, totalBudgetedPrice,
-      totalActualPrice, createdDate, scheduledDate, groceryList);
+      totalActualPrice, createdDate, scheduledDate, groceries);
 
   @JsonKey(ignore: true)
   @override
@@ -236,7 +236,7 @@ abstract class _Session extends Session {
       required final ValidatedNumber totalActualPrice,
       required final DateTime createdDate,
       required final DateTime scheduledDate,
-      required final GList<GroceryItem> groceryList}) = _$_Session;
+      required final GList<GroceryItem> groceries}) = _$_Session;
   const _Session._() : super._();
 
   @override
@@ -252,7 +252,7 @@ abstract class _Session extends Session {
   @override
   DateTime get scheduledDate;
   @override
-  GList<GroceryItem> get groceryList;
+  GList<GroceryItem> get groceries;
   @override
   @JsonKey(ignore: true)
   _$$_SessionCopyWith<_$_Session> get copyWith =>
