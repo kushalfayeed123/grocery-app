@@ -29,17 +29,17 @@ class AppWidget extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: themeData.copyWith(
               textTheme: TextTheme(
-                titleLarge: GoogleFonts.getFont('Poppins').copyWith(
+                titleLarge: GoogleFonts.getFont('Lato').copyWith(
                     color: const Color(0xFF000000),
                     fontSize: 26,
                     fontWeight: FontWeight.w700),
-                titleMedium: GoogleFonts.getFont('Poppins').copyWith(
+                titleMedium: GoogleFonts.getFont('Lato').copyWith(
                     color: const Color(0xFF000000),
                     fontSize: 18,
                     fontWeight: FontWeight.w700),
-                bodyMedium: GoogleFonts.getFont('Poppins')
+                bodyMedium: GoogleFonts.getFont('Lato')
                     .copyWith(color: const Color(0xFF000000), fontSize: 14),
-                bodySmall: GoogleFonts.getFont('Poppins').copyWith(
+                bodySmall: GoogleFonts.getFont('Lato').copyWith(
                     color: const Color(0xFF7C7C7C),
                     fontSize: 14,
                     fontWeight: FontWeight.normal),

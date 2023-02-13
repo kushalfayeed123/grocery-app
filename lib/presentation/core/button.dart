@@ -6,13 +6,14 @@ class CustomButton extends StatelessWidget {
   final double? width;
   final double? height;
   final IconData? icon;
-  const CustomButton(
-      {super.key,
-      required this.text,
-      required this.onTap,
-      this.width,
-      this.height = 40,
-      this.icon});
+  const CustomButton({
+    super.key,
+    required this.text,
+    required this.onTap,
+    this.width,
+    this.height = 40,
+    this.icon,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +24,12 @@ class CustomButton extends StatelessWidget {
         height: height,
         width: width,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(10),
           color: Theme.of(context).primaryColor,
         ),
         child: Center(
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               icon != null
                   ? Row(
