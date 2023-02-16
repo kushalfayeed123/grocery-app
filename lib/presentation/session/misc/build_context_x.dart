@@ -7,6 +7,7 @@ extension FormGroceriesX on BuildContext {
   KtList<GroceryItemPrimitive> get formGroceries =>
       Provider.of<FormGroceries>(this, listen: false).value;
 
-  set formGroceries(KtList<GroceryItemPrimitive> value) =>
-      Provider.of<FormGroceries>(this, listen: false).value = value;
+  set formGroceries(KtList<GroceryItemPrimitive> value) {
+    Provider.of<FormGroceries>(this, listen: false).value = value;
+  }
 }

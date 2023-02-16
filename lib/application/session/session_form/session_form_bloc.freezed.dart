@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SessionFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() reset,
     required TResult Function(Option<Session> initialOption) initialized,
     required TResult Function(int price) totalBudgetedPriceChanged,
     required TResult Function(int price) totalActualPriceChanged,
@@ -25,34 +26,41 @@ mixin _$SessionFormEvent {
     required TResult Function(DateTime scheduledDate) scheduledDateChanged,
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         groceriesChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        grocerySaved,
     required TResult Function() saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? reset,
     TResult? Function(Option<Session> initialOption)? initialized,
     TResult? Function(int price)? totalBudgetedPriceChanged,
     TResult? Function(int price)? totalActualPriceChanged,
     TResult? Function(String statusStr)? statusChanged,
     TResult? Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? reset,
     TResult Function(Option<Session> initialOption)? initialized,
     TResult Function(int price)? totalBudgetedPriceChanged,
     TResult Function(int price)? totalActualPriceChanged,
     TResult Function(String statusStr)? statusChanged,
     TResult Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Reset value) reset,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_TotalBudgetedPriceChanged value)
         totalBudgetedPriceChanged,
@@ -61,11 +69,13 @@ mixin _$SessionFormEvent {
     required TResult Function(_StatusChanged value) statusChanged,
     required TResult Function(_ScheduledDateChanged value) scheduledDateChanged,
     required TResult Function(_GroceriesChanged value) groceriesChanged,
+    required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Reset value)? reset,
     TResult? Function(_Initialized value)? initialized,
     TResult? Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -73,11 +83,13 @@ mixin _$SessionFormEvent {
     TResult? Function(_StatusChanged value)? statusChanged,
     TResult? Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
+    TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Reset value)? reset,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -85,6 +97,7 @@ mixin _$SessionFormEvent {
     TResult Function(_StatusChanged value)? statusChanged,
     TResult Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult Function(_GroceriesChanged value)? groceriesChanged,
+    TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) =>
@@ -107,6 +120,154 @@ class _$SessionFormEventCopyWithImpl<$Res, $Val extends SessionFormEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$_ResetCopyWith<$Res> {
+  factory _$$_ResetCopyWith(_$_Reset value, $Res Function(_$_Reset) then) =
+      __$$_ResetCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ResetCopyWithImpl<$Res>
+    extends _$SessionFormEventCopyWithImpl<$Res, _$_Reset>
+    implements _$$_ResetCopyWith<$Res> {
+  __$$_ResetCopyWithImpl(_$_Reset _value, $Res Function(_$_Reset) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_Reset implements _Reset {
+  const _$_Reset();
+
+  @override
+  String toString() {
+    return 'SessionFormEvent.reset()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Reset);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() reset,
+    required TResult Function(Option<Session> initialOption) initialized,
+    required TResult Function(int price) totalBudgetedPriceChanged,
+    required TResult Function(int price) totalActualPriceChanged,
+    required TResult Function(String statusStr) statusChanged,
+    required TResult Function(DateTime scheduledDate) scheduledDateChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        groceriesChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        grocerySaved,
+    required TResult Function() saved,
+  }) {
+    return reset();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? reset,
+    TResult? Function(Option<Session> initialOption)? initialized,
+    TResult? Function(int price)? totalBudgetedPriceChanged,
+    TResult? Function(int price)? totalActualPriceChanged,
+    TResult? Function(String statusStr)? statusChanged,
+    TResult? Function(DateTime scheduledDate)? scheduledDateChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
+    TResult? Function()? saved,
+  }) {
+    return reset?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? reset,
+    TResult Function(Option<Session> initialOption)? initialized,
+    TResult Function(int price)? totalBudgetedPriceChanged,
+    TResult Function(int price)? totalActualPriceChanged,
+    TResult Function(String statusStr)? statusChanged,
+    TResult Function(DateTime scheduledDate)? scheduledDateChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Reset value) reset,
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TotalBudgetedPriceChanged value)
+        totalBudgetedPriceChanged,
+    required TResult Function(_TotalActualPriceChanged value)
+        totalActualPriceChanged,
+    required TResult Function(_StatusChanged value) statusChanged,
+    required TResult Function(_ScheduledDateChanged value) scheduledDateChanged,
+    required TResult Function(_GroceriesChanged value) groceriesChanged,
+    required TResult Function(_GrocerySaved value) grocerySaved,
+    required TResult Function(_Saved value) saved,
+  }) {
+    return reset(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Reset value)? reset,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_TotalBudgetedPriceChanged value)?
+        totalBudgetedPriceChanged,
+    TResult? Function(_TotalActualPriceChanged value)? totalActualPriceChanged,
+    TResult? Function(_StatusChanged value)? statusChanged,
+    TResult? Function(_ScheduledDateChanged value)? scheduledDateChanged,
+    TResult? Function(_GroceriesChanged value)? groceriesChanged,
+    TResult? Function(_GrocerySaved value)? grocerySaved,
+    TResult? Function(_Saved value)? saved,
+  }) {
+    return reset?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Reset value)? reset,
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TotalBudgetedPriceChanged value)?
+        totalBudgetedPriceChanged,
+    TResult Function(_TotalActualPriceChanged value)? totalActualPriceChanged,
+    TResult Function(_StatusChanged value)? statusChanged,
+    TResult Function(_ScheduledDateChanged value)? scheduledDateChanged,
+    TResult Function(_GroceriesChanged value)? groceriesChanged,
+    TResult Function(_GrocerySaved value)? grocerySaved,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Reset implements SessionFormEvent {
+  const factory _Reset() = _$_Reset;
 }
 
 /// @nodoc
@@ -174,6 +335,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() reset,
     required TResult Function(Option<Session> initialOption) initialized,
     required TResult Function(int price) totalBudgetedPriceChanged,
     required TResult Function(int price) totalActualPriceChanged,
@@ -181,6 +343,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(DateTime scheduledDate) scheduledDateChanged,
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         groceriesChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        grocerySaved,
     required TResult Function() saved,
   }) {
     return initialized(initialOption);
@@ -189,12 +353,14 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? reset,
     TResult? Function(Option<Session> initialOption)? initialized,
     TResult? Function(int price)? totalBudgetedPriceChanged,
     TResult? Function(int price)? totalActualPriceChanged,
     TResult? Function(String statusStr)? statusChanged,
     TResult? Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
   }) {
     return initialized?.call(initialOption);
@@ -203,12 +369,14 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? reset,
     TResult Function(Option<Session> initialOption)? initialized,
     TResult Function(int price)? totalBudgetedPriceChanged,
     TResult Function(int price)? totalActualPriceChanged,
     TResult Function(String statusStr)? statusChanged,
     TResult Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -221,6 +389,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Reset value) reset,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_TotalBudgetedPriceChanged value)
         totalBudgetedPriceChanged,
@@ -229,6 +398,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_StatusChanged value) statusChanged,
     required TResult Function(_ScheduledDateChanged value) scheduledDateChanged,
     required TResult Function(_GroceriesChanged value) groceriesChanged,
+    required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
   }) {
     return initialized(this);
@@ -237,6 +407,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Reset value)? reset,
     TResult? Function(_Initialized value)? initialized,
     TResult? Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -244,6 +415,7 @@ class _$_Initialized implements _Initialized {
     TResult? Function(_StatusChanged value)? statusChanged,
     TResult? Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
+    TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
   }) {
     return initialized?.call(this);
@@ -252,6 +424,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Reset value)? reset,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -259,6 +432,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_StatusChanged value)? statusChanged,
     TResult Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult Function(_GroceriesChanged value)? groceriesChanged,
+    TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -346,6 +520,7 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() reset,
     required TResult Function(Option<Session> initialOption) initialized,
     required TResult Function(int price) totalBudgetedPriceChanged,
     required TResult Function(int price) totalActualPriceChanged,
@@ -353,6 +528,8 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
     required TResult Function(DateTime scheduledDate) scheduledDateChanged,
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         groceriesChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        grocerySaved,
     required TResult Function() saved,
   }) {
     return totalBudgetedPriceChanged(price);
@@ -361,12 +538,14 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? reset,
     TResult? Function(Option<Session> initialOption)? initialized,
     TResult? Function(int price)? totalBudgetedPriceChanged,
     TResult? Function(int price)? totalActualPriceChanged,
     TResult? Function(String statusStr)? statusChanged,
     TResult? Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
   }) {
     return totalBudgetedPriceChanged?.call(price);
@@ -375,12 +554,14 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? reset,
     TResult Function(Option<Session> initialOption)? initialized,
     TResult Function(int price)? totalBudgetedPriceChanged,
     TResult Function(int price)? totalActualPriceChanged,
     TResult Function(String statusStr)? statusChanged,
     TResult Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -393,6 +574,7 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Reset value) reset,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_TotalBudgetedPriceChanged value)
         totalBudgetedPriceChanged,
@@ -401,6 +583,7 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
     required TResult Function(_StatusChanged value) statusChanged,
     required TResult Function(_ScheduledDateChanged value) scheduledDateChanged,
     required TResult Function(_GroceriesChanged value) groceriesChanged,
+    required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
   }) {
     return totalBudgetedPriceChanged(this);
@@ -409,6 +592,7 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Reset value)? reset,
     TResult? Function(_Initialized value)? initialized,
     TResult? Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -416,6 +600,7 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
     TResult? Function(_StatusChanged value)? statusChanged,
     TResult? Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
+    TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
   }) {
     return totalBudgetedPriceChanged?.call(this);
@@ -424,6 +609,7 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Reset value)? reset,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -431,6 +617,7 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
     TResult Function(_StatusChanged value)? statusChanged,
     TResult Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult Function(_GroceriesChanged value)? groceriesChanged,
+    TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -517,6 +704,7 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() reset,
     required TResult Function(Option<Session> initialOption) initialized,
     required TResult Function(int price) totalBudgetedPriceChanged,
     required TResult Function(int price) totalActualPriceChanged,
@@ -524,6 +712,8 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
     required TResult Function(DateTime scheduledDate) scheduledDateChanged,
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         groceriesChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        grocerySaved,
     required TResult Function() saved,
   }) {
     return totalActualPriceChanged(price);
@@ -532,12 +722,14 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? reset,
     TResult? Function(Option<Session> initialOption)? initialized,
     TResult? Function(int price)? totalBudgetedPriceChanged,
     TResult? Function(int price)? totalActualPriceChanged,
     TResult? Function(String statusStr)? statusChanged,
     TResult? Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
   }) {
     return totalActualPriceChanged?.call(price);
@@ -546,12 +738,14 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? reset,
     TResult Function(Option<Session> initialOption)? initialized,
     TResult Function(int price)? totalBudgetedPriceChanged,
     TResult Function(int price)? totalActualPriceChanged,
     TResult Function(String statusStr)? statusChanged,
     TResult Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -564,6 +758,7 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Reset value) reset,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_TotalBudgetedPriceChanged value)
         totalBudgetedPriceChanged,
@@ -572,6 +767,7 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
     required TResult Function(_StatusChanged value) statusChanged,
     required TResult Function(_ScheduledDateChanged value) scheduledDateChanged,
     required TResult Function(_GroceriesChanged value) groceriesChanged,
+    required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
   }) {
     return totalActualPriceChanged(this);
@@ -580,6 +776,7 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Reset value)? reset,
     TResult? Function(_Initialized value)? initialized,
     TResult? Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -587,6 +784,7 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
     TResult? Function(_StatusChanged value)? statusChanged,
     TResult? Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
+    TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
   }) {
     return totalActualPriceChanged?.call(this);
@@ -595,6 +793,7 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Reset value)? reset,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -602,6 +801,7 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
     TResult Function(_StatusChanged value)? statusChanged,
     TResult Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult Function(_GroceriesChanged value)? groceriesChanged,
+    TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -687,6 +887,7 @@ class _$_StatusChanged implements _StatusChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() reset,
     required TResult Function(Option<Session> initialOption) initialized,
     required TResult Function(int price) totalBudgetedPriceChanged,
     required TResult Function(int price) totalActualPriceChanged,
@@ -694,6 +895,8 @@ class _$_StatusChanged implements _StatusChanged {
     required TResult Function(DateTime scheduledDate) scheduledDateChanged,
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         groceriesChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        grocerySaved,
     required TResult Function() saved,
   }) {
     return statusChanged(statusStr);
@@ -702,12 +905,14 @@ class _$_StatusChanged implements _StatusChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? reset,
     TResult? Function(Option<Session> initialOption)? initialized,
     TResult? Function(int price)? totalBudgetedPriceChanged,
     TResult? Function(int price)? totalActualPriceChanged,
     TResult? Function(String statusStr)? statusChanged,
     TResult? Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
   }) {
     return statusChanged?.call(statusStr);
@@ -716,12 +921,14 @@ class _$_StatusChanged implements _StatusChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? reset,
     TResult Function(Option<Session> initialOption)? initialized,
     TResult Function(int price)? totalBudgetedPriceChanged,
     TResult Function(int price)? totalActualPriceChanged,
     TResult Function(String statusStr)? statusChanged,
     TResult Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -734,6 +941,7 @@ class _$_StatusChanged implements _StatusChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Reset value) reset,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_TotalBudgetedPriceChanged value)
         totalBudgetedPriceChanged,
@@ -742,6 +950,7 @@ class _$_StatusChanged implements _StatusChanged {
     required TResult Function(_StatusChanged value) statusChanged,
     required TResult Function(_ScheduledDateChanged value) scheduledDateChanged,
     required TResult Function(_GroceriesChanged value) groceriesChanged,
+    required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
   }) {
     return statusChanged(this);
@@ -750,6 +959,7 @@ class _$_StatusChanged implements _StatusChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Reset value)? reset,
     TResult? Function(_Initialized value)? initialized,
     TResult? Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -757,6 +967,7 @@ class _$_StatusChanged implements _StatusChanged {
     TResult? Function(_StatusChanged value)? statusChanged,
     TResult? Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
+    TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
   }) {
     return statusChanged?.call(this);
@@ -765,6 +976,7 @@ class _$_StatusChanged implements _StatusChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Reset value)? reset,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -772,6 +984,7 @@ class _$_StatusChanged implements _StatusChanged {
     TResult Function(_StatusChanged value)? statusChanged,
     TResult Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult Function(_GroceriesChanged value)? groceriesChanged,
+    TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -857,6 +1070,7 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() reset,
     required TResult Function(Option<Session> initialOption) initialized,
     required TResult Function(int price) totalBudgetedPriceChanged,
     required TResult Function(int price) totalActualPriceChanged,
@@ -864,6 +1078,8 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
     required TResult Function(DateTime scheduledDate) scheduledDateChanged,
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         groceriesChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        grocerySaved,
     required TResult Function() saved,
   }) {
     return scheduledDateChanged(scheduledDate);
@@ -872,12 +1088,14 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? reset,
     TResult? Function(Option<Session> initialOption)? initialized,
     TResult? Function(int price)? totalBudgetedPriceChanged,
     TResult? Function(int price)? totalActualPriceChanged,
     TResult? Function(String statusStr)? statusChanged,
     TResult? Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
   }) {
     return scheduledDateChanged?.call(scheduledDate);
@@ -886,12 +1104,14 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? reset,
     TResult Function(Option<Session> initialOption)? initialized,
     TResult Function(int price)? totalBudgetedPriceChanged,
     TResult Function(int price)? totalActualPriceChanged,
     TResult Function(String statusStr)? statusChanged,
     TResult Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -904,6 +1124,7 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Reset value) reset,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_TotalBudgetedPriceChanged value)
         totalBudgetedPriceChanged,
@@ -912,6 +1133,7 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
     required TResult Function(_StatusChanged value) statusChanged,
     required TResult Function(_ScheduledDateChanged value) scheduledDateChanged,
     required TResult Function(_GroceriesChanged value) groceriesChanged,
+    required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
   }) {
     return scheduledDateChanged(this);
@@ -920,6 +1142,7 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Reset value)? reset,
     TResult? Function(_Initialized value)? initialized,
     TResult? Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -927,6 +1150,7 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
     TResult? Function(_StatusChanged value)? statusChanged,
     TResult? Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
+    TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
   }) {
     return scheduledDateChanged?.call(this);
@@ -935,6 +1159,7 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Reset value)? reset,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -942,6 +1167,7 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
     TResult Function(_StatusChanged value)? statusChanged,
     TResult Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult Function(_GroceriesChanged value)? groceriesChanged,
+    TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -1027,6 +1253,7 @@ class _$_GroceriesChanged implements _GroceriesChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() reset,
     required TResult Function(Option<Session> initialOption) initialized,
     required TResult Function(int price) totalBudgetedPriceChanged,
     required TResult Function(int price) totalActualPriceChanged,
@@ -1034,6 +1261,8 @@ class _$_GroceriesChanged implements _GroceriesChanged {
     required TResult Function(DateTime scheduledDate) scheduledDateChanged,
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         groceriesChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        grocerySaved,
     required TResult Function() saved,
   }) {
     return groceriesChanged(groceries);
@@ -1042,12 +1271,14 @@ class _$_GroceriesChanged implements _GroceriesChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? reset,
     TResult? Function(Option<Session> initialOption)? initialized,
     TResult? Function(int price)? totalBudgetedPriceChanged,
     TResult? Function(int price)? totalActualPriceChanged,
     TResult? Function(String statusStr)? statusChanged,
     TResult? Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
   }) {
     return groceriesChanged?.call(groceries);
@@ -1056,12 +1287,14 @@ class _$_GroceriesChanged implements _GroceriesChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? reset,
     TResult Function(Option<Session> initialOption)? initialized,
     TResult Function(int price)? totalBudgetedPriceChanged,
     TResult Function(int price)? totalActualPriceChanged,
     TResult Function(String statusStr)? statusChanged,
     TResult Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -1074,6 +1307,7 @@ class _$_GroceriesChanged implements _GroceriesChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Reset value) reset,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_TotalBudgetedPriceChanged value)
         totalBudgetedPriceChanged,
@@ -1082,6 +1316,7 @@ class _$_GroceriesChanged implements _GroceriesChanged {
     required TResult Function(_StatusChanged value) statusChanged,
     required TResult Function(_ScheduledDateChanged value) scheduledDateChanged,
     required TResult Function(_GroceriesChanged value) groceriesChanged,
+    required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
   }) {
     return groceriesChanged(this);
@@ -1090,6 +1325,7 @@ class _$_GroceriesChanged implements _GroceriesChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Reset value)? reset,
     TResult? Function(_Initialized value)? initialized,
     TResult? Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -1097,6 +1333,7 @@ class _$_GroceriesChanged implements _GroceriesChanged {
     TResult? Function(_StatusChanged value)? statusChanged,
     TResult? Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
+    TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
   }) {
     return groceriesChanged?.call(this);
@@ -1105,6 +1342,7 @@ class _$_GroceriesChanged implements _GroceriesChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Reset value)? reset,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -1112,6 +1350,7 @@ class _$_GroceriesChanged implements _GroceriesChanged {
     TResult Function(_StatusChanged value)? statusChanged,
     TResult Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult Function(_GroceriesChanged value)? groceriesChanged,
+    TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
@@ -1129,6 +1368,189 @@ abstract class _GroceriesChanged implements SessionFormEvent {
   KtList<GroceryItemPrimitive> get groceries;
   @JsonKey(ignore: true)
   _$$_GroceriesChangedCopyWith<_$_GroceriesChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_GrocerySavedCopyWith<$Res> {
+  factory _$$_GrocerySavedCopyWith(
+          _$_GrocerySaved value, $Res Function(_$_GrocerySaved) then) =
+      __$$_GrocerySavedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({KtList<GroceryItemPrimitive> groceries});
+}
+
+/// @nodoc
+class __$$_GrocerySavedCopyWithImpl<$Res>
+    extends _$SessionFormEventCopyWithImpl<$Res, _$_GrocerySaved>
+    implements _$$_GrocerySavedCopyWith<$Res> {
+  __$$_GrocerySavedCopyWithImpl(
+      _$_GrocerySaved _value, $Res Function(_$_GrocerySaved) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? groceries = null,
+  }) {
+    return _then(_$_GrocerySaved(
+      null == groceries
+          ? _value.groceries
+          : groceries // ignore: cast_nullable_to_non_nullable
+              as KtList<GroceryItemPrimitive>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GrocerySaved implements _GrocerySaved {
+  const _$_GrocerySaved(this.groceries);
+
+  @override
+  final KtList<GroceryItemPrimitive> groceries;
+
+  @override
+  String toString() {
+    return 'SessionFormEvent.grocerySaved(groceries: $groceries)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GrocerySaved &&
+            (identical(other.groceries, groceries) ||
+                other.groceries == groceries));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, groceries);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_GrocerySavedCopyWith<_$_GrocerySaved> get copyWith =>
+      __$$_GrocerySavedCopyWithImpl<_$_GrocerySaved>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() reset,
+    required TResult Function(Option<Session> initialOption) initialized,
+    required TResult Function(int price) totalBudgetedPriceChanged,
+    required TResult Function(int price) totalActualPriceChanged,
+    required TResult Function(String statusStr) statusChanged,
+    required TResult Function(DateTime scheduledDate) scheduledDateChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        groceriesChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        grocerySaved,
+    required TResult Function() saved,
+  }) {
+    return grocerySaved(groceries);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? reset,
+    TResult? Function(Option<Session> initialOption)? initialized,
+    TResult? Function(int price)? totalBudgetedPriceChanged,
+    TResult? Function(int price)? totalActualPriceChanged,
+    TResult? Function(String statusStr)? statusChanged,
+    TResult? Function(DateTime scheduledDate)? scheduledDateChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
+    TResult? Function()? saved,
+  }) {
+    return grocerySaved?.call(groceries);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? reset,
+    TResult Function(Option<Session> initialOption)? initialized,
+    TResult Function(int price)? totalBudgetedPriceChanged,
+    TResult Function(int price)? totalActualPriceChanged,
+    TResult Function(String statusStr)? statusChanged,
+    TResult Function(DateTime scheduledDate)? scheduledDateChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
+    TResult Function()? saved,
+    required TResult orElse(),
+  }) {
+    if (grocerySaved != null) {
+      return grocerySaved(groceries);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Reset value) reset,
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TotalBudgetedPriceChanged value)
+        totalBudgetedPriceChanged,
+    required TResult Function(_TotalActualPriceChanged value)
+        totalActualPriceChanged,
+    required TResult Function(_StatusChanged value) statusChanged,
+    required TResult Function(_ScheduledDateChanged value) scheduledDateChanged,
+    required TResult Function(_GroceriesChanged value) groceriesChanged,
+    required TResult Function(_GrocerySaved value) grocerySaved,
+    required TResult Function(_Saved value) saved,
+  }) {
+    return grocerySaved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Reset value)? reset,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_TotalBudgetedPriceChanged value)?
+        totalBudgetedPriceChanged,
+    TResult? Function(_TotalActualPriceChanged value)? totalActualPriceChanged,
+    TResult? Function(_StatusChanged value)? statusChanged,
+    TResult? Function(_ScheduledDateChanged value)? scheduledDateChanged,
+    TResult? Function(_GroceriesChanged value)? groceriesChanged,
+    TResult? Function(_GrocerySaved value)? grocerySaved,
+    TResult? Function(_Saved value)? saved,
+  }) {
+    return grocerySaved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Reset value)? reset,
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TotalBudgetedPriceChanged value)?
+        totalBudgetedPriceChanged,
+    TResult Function(_TotalActualPriceChanged value)? totalActualPriceChanged,
+    TResult Function(_StatusChanged value)? statusChanged,
+    TResult Function(_ScheduledDateChanged value)? scheduledDateChanged,
+    TResult Function(_GroceriesChanged value)? groceriesChanged,
+    TResult Function(_GrocerySaved value)? grocerySaved,
+    TResult Function(_Saved value)? saved,
+    required TResult orElse(),
+  }) {
+    if (grocerySaved != null) {
+      return grocerySaved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GrocerySaved implements SessionFormEvent {
+  const factory _GrocerySaved(final KtList<GroceryItemPrimitive> groceries) =
+      _$_GrocerySaved;
+
+  KtList<GroceryItemPrimitive> get groceries;
+  @JsonKey(ignore: true)
+  _$$_GrocerySavedCopyWith<_$_GrocerySaved> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1168,6 +1590,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() reset,
     required TResult Function(Option<Session> initialOption) initialized,
     required TResult Function(int price) totalBudgetedPriceChanged,
     required TResult Function(int price) totalActualPriceChanged,
@@ -1175,6 +1598,8 @@ class _$_Saved implements _Saved {
     required TResult Function(DateTime scheduledDate) scheduledDateChanged,
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         groceriesChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        grocerySaved,
     required TResult Function() saved,
   }) {
     return saved();
@@ -1183,12 +1608,14 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? reset,
     TResult? Function(Option<Session> initialOption)? initialized,
     TResult? Function(int price)? totalBudgetedPriceChanged,
     TResult? Function(int price)? totalActualPriceChanged,
     TResult? Function(String statusStr)? statusChanged,
     TResult? Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
   }) {
     return saved?.call();
@@ -1197,12 +1624,14 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? reset,
     TResult Function(Option<Session> initialOption)? initialized,
     TResult Function(int price)? totalBudgetedPriceChanged,
     TResult Function(int price)? totalActualPriceChanged,
     TResult Function(String statusStr)? statusChanged,
     TResult Function(DateTime scheduledDate)? scheduledDateChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
@@ -1215,6 +1644,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Reset value) reset,
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_TotalBudgetedPriceChanged value)
         totalBudgetedPriceChanged,
@@ -1223,6 +1653,7 @@ class _$_Saved implements _Saved {
     required TResult Function(_StatusChanged value) statusChanged,
     required TResult Function(_ScheduledDateChanged value) scheduledDateChanged,
     required TResult Function(_GroceriesChanged value) groceriesChanged,
+    required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
   }) {
     return saved(this);
@@ -1231,6 +1662,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Reset value)? reset,
     TResult? Function(_Initialized value)? initialized,
     TResult? Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -1238,6 +1670,7 @@ class _$_Saved implements _Saved {
     TResult? Function(_StatusChanged value)? statusChanged,
     TResult? Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
+    TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
   }) {
     return saved?.call(this);
@@ -1246,6 +1679,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Reset value)? reset,
     TResult Function(_Initialized value)? initialized,
     TResult Function(_TotalBudgetedPriceChanged value)?
         totalBudgetedPriceChanged,
@@ -1253,6 +1687,7 @@ class _$_Saved implements _Saved {
     TResult Function(_StatusChanged value)? statusChanged,
     TResult Function(_ScheduledDateChanged value)? scheduledDateChanged,
     TResult Function(_GroceriesChanged value)? groceriesChanged,
+    TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {

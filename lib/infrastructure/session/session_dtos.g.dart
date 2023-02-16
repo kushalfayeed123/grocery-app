@@ -39,6 +39,7 @@ _$_GroceryITemDto _$$_GroceryITemDtoFromJson(Map<String, dynamic> json) =>
       actualPrice: json['actualPrice'] as int,
       quantity: json['quantity'] as int,
       isInCart: json['isInCart'] as bool,
+      show: json['show'] as bool,
       addedDate: DateTime.parse(json['addedDate'] as String),
     );
 
@@ -53,5 +54,6 @@ Map<String, dynamic> _$$_GroceryITemDtoToJson(_$_GroceryITemDto instance) =>
       'actualPrice': instance.actualPrice,
       'quantity': instance.quantity,
       'isInCart': instance.isInCart,
+      'show': instance.show,
       'addedDate': instance.addedDate.toIso8601String(),
     };

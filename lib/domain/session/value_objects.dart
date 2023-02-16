@@ -18,9 +18,11 @@ class SessionStatus extends ValueObject<String> {
 class GroceryCategory extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
+  static const maxLength = 30;
+
   factory GroceryCategory(String input) {
     return GroceryCategory._(
-      validateStringNotEmpty(input),
+      validateMaxStringLength(input, maxLength).flatMap(validateStringNotEmpty),
     );
   }
   const GroceryCategory._(this.value);
@@ -53,7 +55,8 @@ class GroceryDescription extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
   static const maxLength = 1000;
   factory GroceryDescription(String input) {
-    return GroceryDescription._(validateMaxStringLength(input, maxLength));
+    return GroceryDescription._(validateMaxStringLength(input, maxLength)
+        .flatMap(validateStringNotEmpty));
   }
   const GroceryDescription._(this.value);
 }

@@ -71,6 +71,7 @@ abstract class GroceryItemDto implements _$GroceryItemDto {
     required int actualPrice,
     required int quantity,
     required bool isInCart,
+    required bool show,
     required DateTime addedDate,
   }) = _GroceryITemDto;
 
@@ -84,6 +85,7 @@ abstract class GroceryItemDto implements _$GroceryItemDto {
       actualPrice: groceryItem.actualPrice.getOrCrash(),
       quantity: groceryItem.quantity.getOrCrash(),
       isInCart: groceryItem.isInCart,
+      show: groceryItem.show,
       addedDate: groceryItem.addedDate,
       category: groceryItem.category.getOrCrash(),
     );
@@ -100,7 +102,8 @@ abstract class GroceryItemDto implements _$GroceryItemDto {
         actualPrice: ValidatedNumber(actualPrice),
         image: image,
         addedDate: addedDate,
-        isInCart: isInCart);
+        isInCart: isInCart,
+        show: show);
   }
 
   factory GroceryItemDto.fromJson(Map<String, dynamic> json) =>

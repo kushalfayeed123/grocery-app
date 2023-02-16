@@ -19,22 +19,40 @@ abstract class GroceryItem implements _$GroceryItem {
     required String image,
     required DateTime addedDate,
     required bool isInCart,
+    required bool show,
   }) = _GroceryItem;
 
   factory GroceryItem.empty() => GroceryItem(
-        id: UniqueId(),
-        name: GroceryName(''),
-        quantity: ValidatedNumber(0),
-        budgetedPrice: ValidatedNumber(0),
-        actualPrice: ValidatedNumber(0),
-        image: '',
-        addedDate: DateTime.now(),
-        isInCart: false,
-        description: GroceryDescription(''),
-        category: GroceryCategory(''),
-      );
+      id: UniqueId(),
+      name: GroceryName(''),
+      quantity: ValidatedNumber(0),
+      budgetedPrice: ValidatedNumber(0),
+      actualPrice: ValidatedNumber(0),
+      image: '',
+      addedDate: DateTime.now(),
+      isInCart: false,
+      description: GroceryDescription(''),
+      category: GroceryCategory(''),
+      show: false);
 
   Option<ValueFailure<dynamic>> get failureOption {
-    return name.value.fold((f) => some(f), (_) => none());
+    return name.value.fold(
+        (f) => some(f),
+        (_) => none()
+            .andThen(
+              description.value.fold((f) => some(f), (_) => none()),
+            )
+            .andThen(category.value.fold(
+                (f) => some(f),
+                (_) => none().andThen(
+                      quantity.value.fold(
+                          (f) => some(f),
+                          (_) => none().andThen(
+                                budgetedPrice.value.fold(
+                                  (f) => some(f),
+                                  (_) => none(),
+                                ),
+                              )),
+                    ))));
   }
 }

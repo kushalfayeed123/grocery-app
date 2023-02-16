@@ -313,6 +313,7 @@ mixin _$GroceryItemDto {
   int get actualPrice => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
   bool get isInCart => throw _privateConstructorUsedError;
+  bool get show => throw _privateConstructorUsedError;
   DateTime get addedDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -337,6 +338,7 @@ abstract class $GroceryItemDtoCopyWith<$Res> {
       int actualPrice,
       int quantity,
       bool isInCart,
+      bool show,
       DateTime addedDate});
 }
 
@@ -362,6 +364,7 @@ class _$GroceryItemDtoCopyWithImpl<$Res, $Val extends GroceryItemDto>
     Object? actualPrice = null,
     Object? quantity = null,
     Object? isInCart = null,
+    Object? show = null,
     Object? addedDate = null,
   }) {
     return _then(_value.copyWith(
@@ -401,6 +404,10 @@ class _$GroceryItemDtoCopyWithImpl<$Res, $Val extends GroceryItemDto>
           ? _value.isInCart
           : isInCart // ignore: cast_nullable_to_non_nullable
               as bool,
+      show: null == show
+          ? _value.show
+          : show // ignore: cast_nullable_to_non_nullable
+              as bool,
       addedDate: null == addedDate
           ? _value.addedDate
           : addedDate // ignore: cast_nullable_to_non_nullable
@@ -427,6 +434,7 @@ abstract class _$$_GroceryITemDtoCopyWith<$Res>
       int actualPrice,
       int quantity,
       bool isInCart,
+      bool show,
       DateTime addedDate});
 }
 
@@ -450,6 +458,7 @@ class __$$_GroceryITemDtoCopyWithImpl<$Res>
     Object? actualPrice = null,
     Object? quantity = null,
     Object? isInCart = null,
+    Object? show = null,
     Object? addedDate = null,
   }) {
     return _then(_$_GroceryITemDto(
@@ -489,6 +498,10 @@ class __$$_GroceryITemDtoCopyWithImpl<$Res>
           ? _value.isInCart
           : isInCart // ignore: cast_nullable_to_non_nullable
               as bool,
+      show: null == show
+          ? _value.show
+          : show // ignore: cast_nullable_to_non_nullable
+              as bool,
       addedDate: null == addedDate
           ? _value.addedDate
           : addedDate // ignore: cast_nullable_to_non_nullable
@@ -510,6 +523,7 @@ class _$_GroceryITemDto extends _GroceryITemDto {
       required this.actualPrice,
       required this.quantity,
       required this.isInCart,
+      required this.show,
       required this.addedDate})
       : super._();
 
@@ -535,11 +549,13 @@ class _$_GroceryITemDto extends _GroceryITemDto {
   @override
   final bool isInCart;
   @override
+  final bool show;
+  @override
   final DateTime addedDate;
 
   @override
   String toString() {
-    return 'GroceryItemDto(id: $id, name: $name, description: $description, image: $image, category: $category, budgetedPrice: $budgetedPrice, actualPrice: $actualPrice, quantity: $quantity, isInCart: $isInCart, addedDate: $addedDate)';
+    return 'GroceryItemDto(id: $id, name: $name, description: $description, image: $image, category: $category, budgetedPrice: $budgetedPrice, actualPrice: $actualPrice, quantity: $quantity, isInCart: $isInCart, show: $show, addedDate: $addedDate)';
   }
 
   @override
@@ -562,14 +578,26 @@ class _$_GroceryITemDto extends _GroceryITemDto {
                 other.quantity == quantity) &&
             (identical(other.isInCart, isInCart) ||
                 other.isInCart == isInCart) &&
+            (identical(other.show, show) || other.show == show) &&
             (identical(other.addedDate, addedDate) ||
                 other.addedDate == addedDate));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, description, image,
-      category, budgetedPrice, actualPrice, quantity, isInCart, addedDate);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      description,
+      image,
+      category,
+      budgetedPrice,
+      actualPrice,
+      quantity,
+      isInCart,
+      show,
+      addedDate);
 
   @JsonKey(ignore: true)
   @override
@@ -596,6 +624,7 @@ abstract class _GroceryITemDto extends GroceryItemDto {
       required final int actualPrice,
       required final int quantity,
       required final bool isInCart,
+      required final bool show,
       required final DateTime addedDate}) = _$_GroceryITemDto;
   const _GroceryITemDto._() : super._();
 
@@ -620,6 +649,8 @@ abstract class _GroceryITemDto extends GroceryItemDto {
   int get quantity;
   @override
   bool get isInCart;
+  @override
+  bool get show;
   @override
   DateTime get addedDate;
   @override

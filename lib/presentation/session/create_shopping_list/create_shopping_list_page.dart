@@ -4,6 +4,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grocery_app/application/session/session_form/session_form_bloc.dart';
+import 'package:grocery_app/domain/core/value_object.dart';
 import 'package:grocery_app/injection.dart';
 import 'package:grocery_app/presentation/session/create_shopping_list/widget/shopping_date_field.dart';
 import 'package:grocery_app/presentation/session/misc/build_context_x.dart';
@@ -14,7 +15,7 @@ import 'package:provider/provider.dart';
 import '../../../domain/session/session.dart';
 import '../../core/button.dart';
 import '../../core/progress_indicator.dart';
-import 'widget/grocery_form.dart.dart';
+import 'widget/grocery_form.dart';
 
 class CreateShoppingListPage extends StatelessWidget {
   final Session? editedSession;
@@ -45,7 +46,7 @@ class CreateShoppingListPage extends StatelessWidget {
         buildWhen: (p, c) => p.isSaving != c.isSaving,
         builder: (context, state) => Stack(
           children: [
-            const SessionFormPageScaffold(),
+            SessionFormPageScaffold(),
             SavingInProgressOverlay(
               isSaving: state.isSaving,
             )
@@ -57,7 +58,14 @@ class CreateShoppingListPage extends StatelessWidget {
 }
 
 class SessionFormPageScaffold extends StatelessWidget {
-  const SessionFormPageScaffold({super.key});
+  SessionFormPageScaffold({super.key});
+
+  final nameController = TextEditingController();
+  final descriptionController = TextEditingController();
+  final categoryController = TextEditingController();
+  final budgetedPriceController = TextEditingController();
+  final actualPriceController = TextEditingController();
+  final quantityController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -80,8 +88,7 @@ class SessionFormPageScaffold extends StatelessWidget {
           ),
         ),
         body: BlocBuilder<SessionFormBloc, SessionFormState>(
-          buildWhen: (p, c) =>
-              p.session.scheduledDate != c.session.scheduledDate,
+          // buildWhen: (p, c) => p.autoValidateMode != c.autoValidateMode,
           builder: (context, state) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
@@ -92,70 +99,160 @@ class SessionFormPageScaffold extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const ShoppingDateField(),
-                      CustomButton(
-                        icon: Icons.add,
-                        onTap: () {
-                          showDialog(
-                              context: context,
-                              builder: (context) {
-                                return ChangeNotifierProvider(
-                                  create: (BuildContext context) =>
-                                      FormGroceries(),
-                                  builder: (context, child) => AlertDialog(
-                                    title: Stack(children: [
-                                      Align(
-                                        alignment: const Alignment(1, 0),
-                                        child: GestureDetector(
-                                            onTap: () => Navigator.pop(context),
-                                            child: const Icon(
-                                                Icons.close_rounded)),
-                                      ),
-                                      Align(
-                                        alignment: Alignment.topCenter,
-                                        child: Text(
-                                          'Enter grocery details',
-                                          textAlign: TextAlign.center,
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .titleMedium,
-                                        ),
-                                      )
-                                    ]),
-                                    content: Form(
-                                      autovalidateMode: state.autoValidateMode,
-                                      child: const GroceryForm(
-                                        index: 0,
-                                      ),
-                                    ),
-                                    actions: [
-                                      CustomButton(
-                                          text: 'Save',
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          onTap: () {
-                                            context.formGroceries = context
-                                                .formGroceries
-                                                .plusElement(
-                                                    GroceryItemPrimitive
-                                                        .empty());
-                                            context.read<SessionFormBloc>().add(
-                                                  SessionFormEvent
-                                                      .groceriesChanged(
-                                                    context.formGroceries,
+                      ChangeNotifierProvider<FormGroceries>(
+                        create: (context) => FormGroceries(),
+                        builder: (context, state) {
+                          return CustomButton(
+                            icon: Icons.add,
+                            onTap: () {
+                              SessionFormBloc bloc =
+                                  context.read<SessionFormBloc>();
+                              FormGroceries provider =
+                                  context.read<FormGroceries>();
+                              context.formGroceries = context.formGroceries
+                                  .plusElement(GroceryItemPrimitive.empty());
+                              bloc.add(SessionFormEvent.groceriesChanged(
+                                  context.formGroceries));
+                              showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return StatefulBuilder(
+                                      builder: (context, setStateSB) {
+                                        return ChangeNotifierProvider.value(
+                                          value: provider,
+                                          builder: (context, state) {
+                                            return AlertDialog(
+                                              title: BlocProvider.value(
+                                                value: bloc,
+                                                child: Stack(
+                                                  children: [
+                                                    Align(
+                                                      alignment:
+                                                          const Alignment(1, 0),
+                                                      child: GestureDetector(
+                                                          onTap: () {
+                                                            final grocery =
+                                                                context
+                                                                    .formGroceries
+                                                                    .getOrElse(
+                                                              context.formGroceries
+                                                                      .size -
+                                                                  1,
+                                                              (_) =>
+                                                                  GroceryItemPrimitive
+                                                                      .empty(),
+                                                            );
+                                                            context.formGroceries =
+                                                                context
+                                                                    .formGroceries
+                                                                    .minusElement(
+                                                                        grocery);
+                                                            bloc.add(SessionFormEvent
+                                                                .groceriesChanged(
+                                                                    context
+                                                                        .formGroceries));
+                                                            bloc.add(
+                                                                const SessionFormEvent
+                                                                    .reset());
+                                                            Navigator.pop(
+                                                                context);
+                                                          },
+                                                          child: const Icon(Icons
+                                                              .close_rounded)),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          Alignment.topCenter,
+                                                      child: Text(
+                                                        'Enter grocery details',
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .titleMedium,
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              content: BlocProvider.value(
+                                                value: bloc,
+                                                child: Form(
+                                                  autovalidateMode: bloc
+                                                      .state.autoValidateMode,
+                                                  child: GroceryForm(
+                                                    bloc: bloc,
+                                                    setStateSB: setStateSB,
                                                   ),
-                                                );
-                                            // context.read<SignInFormBloc>().add(
-                                            //     const SignInFormEvent.registerWithEmailAndPassword());
-                                          }),
-                                    ],
-                                  ),
-                                );
-                              });
+                                                ),
+                                              ),
+                                              actions: [
+                                                BlocProvider.value(
+                                                  value: bloc,
+                                                  child: CustomButton(
+                                                      text: 'Save',
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                              .size
+                                                              .width,
+                                                      onTap: () {
+                                                        setStateSB(() {
+                                                          context.formGroceries = context
+                                                              .formGroceries
+                                                              .map((listGrocery) =>
+                                                                  listGrocery.copyWith(
+                                                                      show: bloc
+                                                                          .state
+                                                                          .session
+                                                                          .failureOption
+                                                                          .isNone()));
+                                                          bloc.add(
+                                                            SessionFormEvent
+                                                                .grocerySaved(
+                                                                    context
+                                                                        .formGroceries),
+                                                          );
+                                                          Navigator.pop(
+                                                              context);
+                                                        });
+                                                      }),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      },
+                                    );
+                                  });
+                            },
+                            text: 'Add Grocery',
+                          );
                         },
-                        text: 'Add Grocery',
                       ),
                     ],
-                  )
+                  ),
+                  BlocListener<SessionFormBloc, SessionFormState>(
+                    listener: (context, state) {
+                      // TODO: implement listener
+                    },
+                    child: Expanded(
+                        child: ListView.builder(
+                      itemCount: state.session.groceries.length,
+                      itemBuilder: (context, index) {
+                        final grocery =
+                            state.session.groceries.getOrCrash()[index];
+
+                        return grocery.show
+                            ? Card(
+                                child: Text(
+                                  grocery.name.getOrCrash(),
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                              )
+                            : const SizedBox.shrink();
+                      },
+                    )),
+                  ),
                 ],
               ),
             );

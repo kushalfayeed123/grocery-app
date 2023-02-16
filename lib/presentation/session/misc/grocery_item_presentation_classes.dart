@@ -24,6 +24,7 @@ abstract class GroceryItemPrimitive implements _$GroceryItemPrimitive {
     required int quantity,
     required int budgetedPrice,
     required bool isInCart,
+    required bool show,
     required DateTime addedDate,
     required int actualPrice,
   }) = _GroceryItemPrimitive;
@@ -37,6 +38,7 @@ abstract class GroceryItemPrimitive implements _$GroceryItemPrimitive {
         budgetedPrice: 0,
         actualPrice: 0,
         isInCart: false,
+        show: false,
         addedDate: DateTime.now(),
         category: '',
       );
@@ -53,19 +55,22 @@ abstract class GroceryItemPrimitive implements _$GroceryItemPrimitive {
         image: groceryItem.image,
         addedDate: groceryItem.addedDate,
         isInCart: groceryItem.isInCart,
+        show: groceryItem.show,
       );
 
   GroceryItem toDomain() {
     return GroceryItem(
-        id: id,
-        name: GroceryName(name),
-        description: GroceryDescription(description),
-        category: GroceryCategory(category),
-        quantity: ValidatedNumber(quantity),
-        budgetedPrice: ValidatedNumber(budgetedPrice),
-        actualPrice: ValidatedNumber(actualPrice),
-        image: image,
-        addedDate: addedDate,
-        isInCart: isInCart);
+      id: id,
+      name: GroceryName(name),
+      description: GroceryDescription(description),
+      category: GroceryCategory(category),
+      quantity: ValidatedNumber(quantity),
+      budgetedPrice: ValidatedNumber(budgetedPrice),
+      actualPrice: ValidatedNumber(actualPrice),
+      image: image,
+      addedDate: addedDate,
+      isInCart: isInCart,
+      show: show,
+    );
   }
 }

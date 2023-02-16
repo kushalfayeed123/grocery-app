@@ -7,6 +7,7 @@ import 'package:grocery_app/domain/session/value_objects.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 
+import '../../../domain/session/grocery_item.dart';
 import '../../../domain/session/session.dart';
 import '../../../domain/session/session_failure.dart';
 import '../../../presentation/session/misc/grocery_item_presentation_classes.dart';
@@ -22,6 +23,13 @@ class SessionFormBloc extends Bloc<SessionFormEvent, SessionFormState> {
   SessionFormBloc(this._sessionRepository) : super(SessionFormState.initial()) {
     on<SessionFormEvent>((event, emit) async {
       emit(await event.map(
+        reset: (_) {
+          emit(state.copyWith(
+            isSaving: false,
+            autoValidateMode: AutovalidateMode.disabled,
+          ));
+          return state;
+        },
         initialized: (e) async {
           emit(await e.initialOption.fold(
               () => state,
@@ -65,6 +73,25 @@ class SessionFormBloc extends Bloc<SessionFormEvent, SessionFormState> {
           emit(state.copyWith(
               session: state.session.copyWith(scheduledDate: e.scheduledDate),
               saveFailureOrSuccessOption: none()));
+          return state;
+        },
+        grocerySaved: (e) async {
+          if (state.session.failureOption.isNone()) {
+            emit(state.copyWith(
+              isSaving: false,
+              autoValidateMode: AutovalidateMode.disabled,
+              session: state.session.copyWith(
+                groceries: GList(e.groceries.map(
+                  (primitive) => primitive.toDomain(),
+                )),
+              ),
+              saveFailureOrSuccessOption: none(),
+            ));
+          }
+          emit(state.copyWith(
+            isSaving: false,
+            autoValidateMode: AutovalidateMode.always,
+          ));
           return state;
         },
         saved: (_) async {

@@ -26,6 +26,7 @@ mixin _$GroceryItem {
   String get image => throw _privateConstructorUsedError;
   DateTime get addedDate => throw _privateConstructorUsedError;
   bool get isInCart => throw _privateConstructorUsedError;
+  bool get show => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GroceryItemCopyWith<GroceryItem> get copyWith =>
@@ -48,7 +49,8 @@ abstract class $GroceryItemCopyWith<$Res> {
       ValidatedNumber actualPrice,
       String image,
       DateTime addedDate,
-      bool isInCart});
+      bool isInCart,
+      bool show});
 }
 
 /// @nodoc
@@ -74,6 +76,7 @@ class _$GroceryItemCopyWithImpl<$Res, $Val extends GroceryItem>
     Object? image = null,
     Object? addedDate = null,
     Object? isInCart = null,
+    Object? show = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -116,6 +119,10 @@ class _$GroceryItemCopyWithImpl<$Res, $Val extends GroceryItem>
           ? _value.isInCart
           : isInCart // ignore: cast_nullable_to_non_nullable
               as bool,
+      show: null == show
+          ? _value.show
+          : show // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -138,7 +145,8 @@ abstract class _$$_GroceryItemCopyWith<$Res>
       ValidatedNumber actualPrice,
       String image,
       DateTime addedDate,
-      bool isInCart});
+      bool isInCart,
+      bool show});
 }
 
 /// @nodoc
@@ -162,6 +170,7 @@ class __$$_GroceryItemCopyWithImpl<$Res>
     Object? image = null,
     Object? addedDate = null,
     Object? isInCart = null,
+    Object? show = null,
   }) {
     return _then(_$_GroceryItem(
       id: null == id
@@ -204,6 +213,10 @@ class __$$_GroceryItemCopyWithImpl<$Res>
           ? _value.isInCart
           : isInCart // ignore: cast_nullable_to_non_nullable
               as bool,
+      show: null == show
+          ? _value.show
+          : show // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -221,7 +234,8 @@ class _$_GroceryItem extends _GroceryItem {
       required this.actualPrice,
       required this.image,
       required this.addedDate,
-      required this.isInCart})
+      required this.isInCart,
+      required this.show})
       : super._();
 
   @override
@@ -244,10 +258,12 @@ class _$_GroceryItem extends _GroceryItem {
   final DateTime addedDate;
   @override
   final bool isInCart;
+  @override
+  final bool show;
 
   @override
   String toString() {
-    return 'GroceryItem(id: $id, name: $name, description: $description, category: $category, quantity: $quantity, budgetedPrice: $budgetedPrice, actualPrice: $actualPrice, image: $image, addedDate: $addedDate, isInCart: $isInCart)';
+    return 'GroceryItem(id: $id, name: $name, description: $description, category: $category, quantity: $quantity, budgetedPrice: $budgetedPrice, actualPrice: $actualPrice, image: $image, addedDate: $addedDate, isInCart: $isInCart, show: $show)';
   }
 
   @override
@@ -271,12 +287,13 @@ class _$_GroceryItem extends _GroceryItem {
             (identical(other.addedDate, addedDate) ||
                 other.addedDate == addedDate) &&
             (identical(other.isInCart, isInCart) ||
-                other.isInCart == isInCart));
+                other.isInCart == isInCart) &&
+            (identical(other.show, show) || other.show == show));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, id, name, description, category,
-      quantity, budgetedPrice, actualPrice, image, addedDate, isInCart);
+      quantity, budgetedPrice, actualPrice, image, addedDate, isInCart, show);
 
   @JsonKey(ignore: true)
   @override
@@ -296,7 +313,8 @@ abstract class _GroceryItem extends GroceryItem {
       required final ValidatedNumber actualPrice,
       required final String image,
       required final DateTime addedDate,
-      required final bool isInCart}) = _$_GroceryItem;
+      required final bool isInCart,
+      required final bool show}) = _$_GroceryItem;
   const _GroceryItem._() : super._();
 
   @override
@@ -319,6 +337,8 @@ abstract class _GroceryItem extends GroceryItem {
   DateTime get addedDate;
   @override
   bool get isInCart;
+  @override
+  bool get show;
   @override
   @JsonKey(ignore: true)
   _$$_GroceryItemCopyWith<_$_GroceryItem> get copyWith =>
