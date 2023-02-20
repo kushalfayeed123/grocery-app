@@ -25,8 +25,8 @@ abstract class Session implements _$Session {
   factory Session.empty() => Session(
       id: UniqueId(),
       status: SessionStatus(Status.notStarted),
-      totalBudgetedPrice: ValidatedNumber(0),
-      totalActualPrice: ValidatedNumber(0),
+      totalBudgetedPrice: ValidatedNumber(1),
+      totalActualPrice: ValidatedNumber(1),
       createdDate: DateTime.now(),
       scheduledDate: DateTime.now(),
       groceries: GList(emptyList()));

@@ -113,7 +113,7 @@ class AddGroceryButton extends StatelessWidget {
                   );
                 });
           },
-          text: 'Add Grocery',
+          text: 'ADD GROCERY',
         );
       },
     );

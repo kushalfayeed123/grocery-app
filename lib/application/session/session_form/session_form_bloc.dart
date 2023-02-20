@@ -95,8 +95,20 @@ class SessionFormBloc extends Bloc<SessionFormEvent, SessionFormState> {
         },
         saved: (_) async {
           Either<SessionFailure, Unit>? failureOrSuccess;
+          final budgetedPrices = state.session.groceries
+              .getOrCrash()
+              .map(
+                  (e) => e.budgetedPrice.getOrCrash() * e.quantity.getOrCrash())
+              .asList();
+
+          final totalBudgetPrice = budgetedPrices.reduce(
+            (acc, p1) => acc + p1,
+          );
           emit(state.copyWith(
             isSaving: true,
+            session: state.session.copyWith(
+                totalBudgetedPrice: ValidatedNumber(totalBudgetPrice),
+                totalActualPrice: ValidatedNumber(totalBudgetPrice)),
             saveFailureOrSuccessOption: none(),
           ));
 
@@ -107,7 +119,7 @@ class SessionFormBloc extends Bloc<SessionFormEvent, SessionFormState> {
           }
           emit(state.copyWith(
             isSaving: false,
-            autoValidateMode: AutovalidateMode.always,
+            autoValidateMode: AutovalidateMode.disabled,
             saveFailureOrSuccessOption: optionOf(failureOrSuccess),
           ));
           return state;

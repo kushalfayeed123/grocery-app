@@ -6,6 +6,7 @@ class CustomButton extends StatelessWidget {
   final double? width;
   final double? height;
   final IconData? icon;
+  final Color color;
   const CustomButton({
     super.key,
     required this.text,
@@ -13,6 +14,7 @@ class CustomButton extends StatelessWidget {
     this.width,
     this.height = 40,
     this.icon,
+    this.color = const Color(0xFFFE5152),
   });
 
   @override
@@ -25,7 +27,7 @@ class CustomButton extends StatelessWidget {
         width: width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Theme.of(context).primaryColor,
+          color: color,
         ),
         child: Center(
           child: Row(
@@ -48,7 +50,7 @@ class CustomButton extends StatelessWidget {
                 text,
                 style: Theme.of(context)
                     .textTheme
-                    .bodyMedium
+                    .titleSmall
                     ?.copyWith(color: Theme.of(context).colorScheme.secondary),
               ),
             ],
