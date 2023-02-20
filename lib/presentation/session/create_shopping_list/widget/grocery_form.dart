@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:grocery_app/application/session/session_form/session_form_bloc.dart';
 import 'package:grocery_app/presentation/session/misc/build_context_x.dart';
@@ -217,12 +216,13 @@ class GroceryForm extends HookWidget {
               ),
               TextFormField(
                 cursorColor: Theme.of(context).primaryColor,
-                keyboardType: TextInputType.number,
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: true),
                 controller: priceController,
                 style: Theme.of(context).textTheme.bodyMedium,
                 decoration: InputDecoration(
                     label: Text(
-                      'Budget Price',
+                      'Estimated Price per Unit',
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                     focusedBorder: OutlineInputBorder(

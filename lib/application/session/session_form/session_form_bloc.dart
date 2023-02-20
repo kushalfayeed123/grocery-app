@@ -7,7 +7,6 @@ import 'package:grocery_app/domain/session/value_objects.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 
-import '../../../domain/session/grocery_item.dart';
 import '../../../domain/session/session.dart';
 import '../../../domain/session/session_failure.dart';
 import '../../../presentation/session/misc/grocery_item_presentation_classes.dart';

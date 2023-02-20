@@ -37,6 +37,8 @@ class AppWidget extends StatelessWidget {
                     color: const Color(0xFF000000),
                     fontSize: 18,
                     fontWeight: FontWeight.w700),
+                bodyLarge: GoogleFonts.getFont('Lato')
+                    .copyWith(color: const Color(0xFF000000), fontSize: 16),
                 bodyMedium: GoogleFonts.getFont('Lato')
                     .copyWith(color: const Color(0xFF000000), fontSize: 14),
                 bodySmall: GoogleFonts.getFont('Lato').copyWith(
