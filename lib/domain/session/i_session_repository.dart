@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:grocery_app/domain/session/session.dart';
 import 'package:grocery_app/domain/session/session_failure.dart';
@@ -12,4 +14,5 @@ abstract class ISessionRepository {
   Future<Either<SessionFailure, Unit>> create(Session session);
   Future<Either<SessionFailure, Unit>> update(Session session);
   Future<Either<SessionFailure, Unit>> delete(Session session);
+  Future<Either<SessionFailure, String>> uploadGroceryImage(File file);
 }

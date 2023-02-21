@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:grocery_app/domain/session/i_session_repository.dart';
 import 'package:grocery_app/domain/session/value_objects.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 
@@ -128,6 +131,25 @@ class SessionFormBloc extends Bloc<SessionFormEvent, SessionFormState> {
             autoValidateMode: AutovalidateMode.disabled,
             saveFailureOrSuccessOption: optionOf(failureOrSuccess),
           ));
+          return state;
+        },
+        uploadImage: (_) async {
+          Either<SessionFailure, String>? failureOrSuccess;
+          final ImagePicker _picker = ImagePicker();
+          emit(state.copyWith(
+            isUploading: true,
+            downloadUrl: '',
+          ));
+
+          final XFile? image =
+              await _picker.pickImage(source: ImageSource.gallery);
+          final file = File(image!.path);
+          failureOrSuccess = await _sessionRepository.uploadGroceryImage(file);
+          emit(state.copyWith(
+            isUploading: false,
+            downloadUrl: failureOrSuccess.fold((l) => '', (r) => r),
+          ));
+
           return state;
         },
       ));

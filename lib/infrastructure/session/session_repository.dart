@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:grocery_app/domain/session/i_session_repository.dart';
 import 'package:grocery_app/infrastructure/core/firestore_helpers.dart';
 import 'package:grocery_app/infrastructure/session/session_dtos.dart';
@@ -191,6 +194,18 @@ class SessionRepository implements ISessionRepository {
         //todo log.error(e.toString())
         return left(const SessionFailure.unexpected());
       }
+    }
+  }
+
+  @override
+  Future<Either<SessionFailure, String>> uploadGroceryImage(File file) async {
+    try {
+      final uploadRef = FirebaseStorage.instance.ref().child('apple.png');
+      await uploadRef.putFile(file);
+      final downLoadUrl = await uploadRef.getDownloadURL();
+      return right(downLoadUrl);
+    } on FirebaseException catch (_) {
+      return left(const SessionFailure.unexpected());
     }
   }
 }

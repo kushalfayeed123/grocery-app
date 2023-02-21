@@ -29,6 +29,7 @@ mixin _$SessionFormEvent {
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         grocerySaved,
     required TResult Function() saved,
+    required TResult Function() uploadImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +43,7 @@ mixin _$SessionFormEvent {
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
+    TResult? Function()? uploadImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +57,7 @@ mixin _$SessionFormEvent {
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
+    TResult Function()? uploadImage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,6 +74,7 @@ mixin _$SessionFormEvent {
     required TResult Function(_GroceriesChanged value) groceriesChanged,
     required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_UploadImage value) uploadImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -85,6 +89,7 @@ mixin _$SessionFormEvent {
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
     TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
+    TResult? Function(_UploadImage value)? uploadImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -99,6 +104,7 @@ mixin _$SessionFormEvent {
     TResult Function(_GroceriesChanged value)? groceriesChanged,
     TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
+    TResult Function(_UploadImage value)? uploadImage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -169,6 +175,7 @@ class _$_Reset implements _Reset {
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         grocerySaved,
     required TResult Function() saved,
+    required TResult Function() uploadImage,
   }) {
     return reset();
   }
@@ -185,6 +192,7 @@ class _$_Reset implements _Reset {
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
+    TResult? Function()? uploadImage,
   }) {
     return reset?.call();
   }
@@ -201,6 +209,7 @@ class _$_Reset implements _Reset {
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
+    TResult Function()? uploadImage,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -223,6 +232,7 @@ class _$_Reset implements _Reset {
     required TResult Function(_GroceriesChanged value) groceriesChanged,
     required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_UploadImage value) uploadImage,
   }) {
     return reset(this);
   }
@@ -240,6 +250,7 @@ class _$_Reset implements _Reset {
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
     TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
+    TResult? Function(_UploadImage value)? uploadImage,
   }) {
     return reset?.call(this);
   }
@@ -257,6 +268,7 @@ class _$_Reset implements _Reset {
     TResult Function(_GroceriesChanged value)? groceriesChanged,
     TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
+    TResult Function(_UploadImage value)? uploadImage,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -346,6 +358,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         grocerySaved,
     required TResult Function() saved,
+    required TResult Function() uploadImage,
   }) {
     return initialized(initialOption);
   }
@@ -362,6 +375,7 @@ class _$_Initialized implements _Initialized {
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
+    TResult? Function()? uploadImage,
   }) {
     return initialized?.call(initialOption);
   }
@@ -378,6 +392,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
+    TResult Function()? uploadImage,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -400,6 +415,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_GroceriesChanged value) groceriesChanged,
     required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_UploadImage value) uploadImage,
   }) {
     return initialized(this);
   }
@@ -417,6 +433,7 @@ class _$_Initialized implements _Initialized {
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
     TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
+    TResult? Function(_UploadImage value)? uploadImage,
   }) {
     return initialized?.call(this);
   }
@@ -434,6 +451,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_GroceriesChanged value)? groceriesChanged,
     TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
+    TResult Function(_UploadImage value)? uploadImage,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -505,6 +523,7 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         grocerySaved,
     required TResult Function() saved,
+    required TResult Function() uploadImage,
   }) {
     return totalBudgetedPriceChanged();
   }
@@ -521,6 +540,7 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
+    TResult? Function()? uploadImage,
   }) {
     return totalBudgetedPriceChanged?.call();
   }
@@ -537,6 +557,7 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
+    TResult Function()? uploadImage,
     required TResult orElse(),
   }) {
     if (totalBudgetedPriceChanged != null) {
@@ -559,6 +580,7 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
     required TResult Function(_GroceriesChanged value) groceriesChanged,
     required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_UploadImage value) uploadImage,
   }) {
     return totalBudgetedPriceChanged(this);
   }
@@ -576,6 +598,7 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
     TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
+    TResult? Function(_UploadImage value)? uploadImage,
   }) {
     return totalBudgetedPriceChanged?.call(this);
   }
@@ -593,6 +616,7 @@ class _$_TotalBudgetedPriceChanged implements _TotalBudgetedPriceChanged {
     TResult Function(_GroceriesChanged value)? groceriesChanged,
     TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
+    TResult Function(_UploadImage value)? uploadImage,
     required TResult orElse(),
   }) {
     if (totalBudgetedPriceChanged != null) {
@@ -656,6 +680,7 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         grocerySaved,
     required TResult Function() saved,
+    required TResult Function() uploadImage,
   }) {
     return totalActualPriceChanged();
   }
@@ -672,6 +697,7 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
+    TResult? Function()? uploadImage,
   }) {
     return totalActualPriceChanged?.call();
   }
@@ -688,6 +714,7 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
+    TResult Function()? uploadImage,
     required TResult orElse(),
   }) {
     if (totalActualPriceChanged != null) {
@@ -710,6 +737,7 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
     required TResult Function(_GroceriesChanged value) groceriesChanged,
     required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_UploadImage value) uploadImage,
   }) {
     return totalActualPriceChanged(this);
   }
@@ -727,6 +755,7 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
     TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
+    TResult? Function(_UploadImage value)? uploadImage,
   }) {
     return totalActualPriceChanged?.call(this);
   }
@@ -744,6 +773,7 @@ class _$_TotalActualPriceChanged implements _TotalActualPriceChanged {
     TResult Function(_GroceriesChanged value)? groceriesChanged,
     TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
+    TResult Function(_UploadImage value)? uploadImage,
     required TResult orElse(),
   }) {
     if (totalActualPriceChanged != null) {
@@ -833,6 +863,7 @@ class _$_StatusChanged implements _StatusChanged {
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         grocerySaved,
     required TResult Function() saved,
+    required TResult Function() uploadImage,
   }) {
     return statusChanged(statusStr);
   }
@@ -849,6 +880,7 @@ class _$_StatusChanged implements _StatusChanged {
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
+    TResult? Function()? uploadImage,
   }) {
     return statusChanged?.call(statusStr);
   }
@@ -865,6 +897,7 @@ class _$_StatusChanged implements _StatusChanged {
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
+    TResult Function()? uploadImage,
     required TResult orElse(),
   }) {
     if (statusChanged != null) {
@@ -887,6 +920,7 @@ class _$_StatusChanged implements _StatusChanged {
     required TResult Function(_GroceriesChanged value) groceriesChanged,
     required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_UploadImage value) uploadImage,
   }) {
     return statusChanged(this);
   }
@@ -904,6 +938,7 @@ class _$_StatusChanged implements _StatusChanged {
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
     TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
+    TResult? Function(_UploadImage value)? uploadImage,
   }) {
     return statusChanged?.call(this);
   }
@@ -921,6 +956,7 @@ class _$_StatusChanged implements _StatusChanged {
     TResult Function(_GroceriesChanged value)? groceriesChanged,
     TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
+    TResult Function(_UploadImage value)? uploadImage,
     required TResult orElse(),
   }) {
     if (statusChanged != null) {
@@ -1016,6 +1052,7 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         grocerySaved,
     required TResult Function() saved,
+    required TResult Function() uploadImage,
   }) {
     return scheduledDateChanged(scheduledDate);
   }
@@ -1032,6 +1069,7 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
+    TResult? Function()? uploadImage,
   }) {
     return scheduledDateChanged?.call(scheduledDate);
   }
@@ -1048,6 +1086,7 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
+    TResult Function()? uploadImage,
     required TResult orElse(),
   }) {
     if (scheduledDateChanged != null) {
@@ -1070,6 +1109,7 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
     required TResult Function(_GroceriesChanged value) groceriesChanged,
     required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_UploadImage value) uploadImage,
   }) {
     return scheduledDateChanged(this);
   }
@@ -1087,6 +1127,7 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
     TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
+    TResult? Function(_UploadImage value)? uploadImage,
   }) {
     return scheduledDateChanged?.call(this);
   }
@@ -1104,6 +1145,7 @@ class _$_ScheduledDateChanged implements _ScheduledDateChanged {
     TResult Function(_GroceriesChanged value)? groceriesChanged,
     TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
+    TResult Function(_UploadImage value)? uploadImage,
     required TResult orElse(),
   }) {
     if (scheduledDateChanged != null) {
@@ -1199,6 +1241,7 @@ class _$_GroceriesChanged implements _GroceriesChanged {
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         grocerySaved,
     required TResult Function() saved,
+    required TResult Function() uploadImage,
   }) {
     return groceriesChanged(groceries);
   }
@@ -1215,6 +1258,7 @@ class _$_GroceriesChanged implements _GroceriesChanged {
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
+    TResult? Function()? uploadImage,
   }) {
     return groceriesChanged?.call(groceries);
   }
@@ -1231,6 +1275,7 @@ class _$_GroceriesChanged implements _GroceriesChanged {
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
+    TResult Function()? uploadImage,
     required TResult orElse(),
   }) {
     if (groceriesChanged != null) {
@@ -1253,6 +1298,7 @@ class _$_GroceriesChanged implements _GroceriesChanged {
     required TResult Function(_GroceriesChanged value) groceriesChanged,
     required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_UploadImage value) uploadImage,
   }) {
     return groceriesChanged(this);
   }
@@ -1270,6 +1316,7 @@ class _$_GroceriesChanged implements _GroceriesChanged {
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
     TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
+    TResult? Function(_UploadImage value)? uploadImage,
   }) {
     return groceriesChanged?.call(this);
   }
@@ -1287,6 +1334,7 @@ class _$_GroceriesChanged implements _GroceriesChanged {
     TResult Function(_GroceriesChanged value)? groceriesChanged,
     TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
+    TResult Function(_UploadImage value)? uploadImage,
     required TResult orElse(),
   }) {
     if (groceriesChanged != null) {
@@ -1382,6 +1430,7 @@ class _$_GrocerySaved implements _GrocerySaved {
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         grocerySaved,
     required TResult Function() saved,
+    required TResult Function() uploadImage,
   }) {
     return grocerySaved(groceries);
   }
@@ -1398,6 +1447,7 @@ class _$_GrocerySaved implements _GrocerySaved {
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
+    TResult? Function()? uploadImage,
   }) {
     return grocerySaved?.call(groceries);
   }
@@ -1414,6 +1464,7 @@ class _$_GrocerySaved implements _GrocerySaved {
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
+    TResult Function()? uploadImage,
     required TResult orElse(),
   }) {
     if (grocerySaved != null) {
@@ -1436,6 +1487,7 @@ class _$_GrocerySaved implements _GrocerySaved {
     required TResult Function(_GroceriesChanged value) groceriesChanged,
     required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_UploadImage value) uploadImage,
   }) {
     return grocerySaved(this);
   }
@@ -1453,6 +1505,7 @@ class _$_GrocerySaved implements _GrocerySaved {
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
     TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
+    TResult? Function(_UploadImage value)? uploadImage,
   }) {
     return grocerySaved?.call(this);
   }
@@ -1470,6 +1523,7 @@ class _$_GrocerySaved implements _GrocerySaved {
     TResult Function(_GroceriesChanged value)? groceriesChanged,
     TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
+    TResult Function(_UploadImage value)? uploadImage,
     required TResult orElse(),
   }) {
     if (grocerySaved != null) {
@@ -1536,6 +1590,7 @@ class _$_Saved implements _Saved {
     required TResult Function(KtList<GroceryItemPrimitive> groceries)
         grocerySaved,
     required TResult Function() saved,
+    required TResult Function() uploadImage,
   }) {
     return saved();
   }
@@ -1552,6 +1607,7 @@ class _$_Saved implements _Saved {
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult? Function()? saved,
+    TResult? Function()? uploadImage,
   }) {
     return saved?.call();
   }
@@ -1568,6 +1624,7 @@ class _$_Saved implements _Saved {
     TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
     TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
     TResult Function()? saved,
+    TResult Function()? uploadImage,
     required TResult orElse(),
   }) {
     if (saved != null) {
@@ -1590,6 +1647,7 @@ class _$_Saved implements _Saved {
     required TResult Function(_GroceriesChanged value) groceriesChanged,
     required TResult Function(_GrocerySaved value) grocerySaved,
     required TResult Function(_Saved value) saved,
+    required TResult Function(_UploadImage value) uploadImage,
   }) {
     return saved(this);
   }
@@ -1607,6 +1665,7 @@ class _$_Saved implements _Saved {
     TResult? Function(_GroceriesChanged value)? groceriesChanged,
     TResult? Function(_GrocerySaved value)? grocerySaved,
     TResult? Function(_Saved value)? saved,
+    TResult? Function(_UploadImage value)? uploadImage,
   }) {
     return saved?.call(this);
   }
@@ -1624,6 +1683,7 @@ class _$_Saved implements _Saved {
     TResult Function(_GroceriesChanged value)? groceriesChanged,
     TResult Function(_GrocerySaved value)? grocerySaved,
     TResult Function(_Saved value)? saved,
+    TResult Function(_UploadImage value)? uploadImage,
     required TResult orElse(),
   }) {
     if (saved != null) {
@@ -1638,9 +1698,167 @@ abstract class _Saved implements SessionFormEvent {
 }
 
 /// @nodoc
+abstract class _$$_UploadImageCopyWith<$Res> {
+  factory _$$_UploadImageCopyWith(
+          _$_UploadImage value, $Res Function(_$_UploadImage) then) =
+      __$$_UploadImageCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_UploadImageCopyWithImpl<$Res>
+    extends _$SessionFormEventCopyWithImpl<$Res, _$_UploadImage>
+    implements _$$_UploadImageCopyWith<$Res> {
+  __$$_UploadImageCopyWithImpl(
+      _$_UploadImage _value, $Res Function(_$_UploadImage) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_UploadImage implements _UploadImage {
+  const _$_UploadImage();
+
+  @override
+  String toString() {
+    return 'SessionFormEvent.uploadImage()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_UploadImage);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() reset,
+    required TResult Function(Option<Session> initialOption) initialized,
+    required TResult Function() totalBudgetedPriceChanged,
+    required TResult Function() totalActualPriceChanged,
+    required TResult Function(String statusStr) statusChanged,
+    required TResult Function(DateTime scheduledDate) scheduledDateChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        groceriesChanged,
+    required TResult Function(KtList<GroceryItemPrimitive> groceries)
+        grocerySaved,
+    required TResult Function() saved,
+    required TResult Function() uploadImage,
+  }) {
+    return uploadImage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? reset,
+    TResult? Function(Option<Session> initialOption)? initialized,
+    TResult? Function()? totalBudgetedPriceChanged,
+    TResult? Function()? totalActualPriceChanged,
+    TResult? Function(String statusStr)? statusChanged,
+    TResult? Function(DateTime scheduledDate)? scheduledDateChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult? Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
+    TResult? Function()? saved,
+    TResult? Function()? uploadImage,
+  }) {
+    return uploadImage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? reset,
+    TResult Function(Option<Session> initialOption)? initialized,
+    TResult Function()? totalBudgetedPriceChanged,
+    TResult Function()? totalActualPriceChanged,
+    TResult Function(String statusStr)? statusChanged,
+    TResult Function(DateTime scheduledDate)? scheduledDateChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? groceriesChanged,
+    TResult Function(KtList<GroceryItemPrimitive> groceries)? grocerySaved,
+    TResult Function()? saved,
+    TResult Function()? uploadImage,
+    required TResult orElse(),
+  }) {
+    if (uploadImage != null) {
+      return uploadImage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Reset value) reset,
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_TotalBudgetedPriceChanged value)
+        totalBudgetedPriceChanged,
+    required TResult Function(_TotalActualPriceChanged value)
+        totalActualPriceChanged,
+    required TResult Function(_StatusChanged value) statusChanged,
+    required TResult Function(_ScheduledDateChanged value) scheduledDateChanged,
+    required TResult Function(_GroceriesChanged value) groceriesChanged,
+    required TResult Function(_GrocerySaved value) grocerySaved,
+    required TResult Function(_Saved value) saved,
+    required TResult Function(_UploadImage value) uploadImage,
+  }) {
+    return uploadImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Reset value)? reset,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_TotalBudgetedPriceChanged value)?
+        totalBudgetedPriceChanged,
+    TResult? Function(_TotalActualPriceChanged value)? totalActualPriceChanged,
+    TResult? Function(_StatusChanged value)? statusChanged,
+    TResult? Function(_ScheduledDateChanged value)? scheduledDateChanged,
+    TResult? Function(_GroceriesChanged value)? groceriesChanged,
+    TResult? Function(_GrocerySaved value)? grocerySaved,
+    TResult? Function(_Saved value)? saved,
+    TResult? Function(_UploadImage value)? uploadImage,
+  }) {
+    return uploadImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Reset value)? reset,
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_TotalBudgetedPriceChanged value)?
+        totalBudgetedPriceChanged,
+    TResult Function(_TotalActualPriceChanged value)? totalActualPriceChanged,
+    TResult Function(_StatusChanged value)? statusChanged,
+    TResult Function(_ScheduledDateChanged value)? scheduledDateChanged,
+    TResult Function(_GroceriesChanged value)? groceriesChanged,
+    TResult Function(_GrocerySaved value)? grocerySaved,
+    TResult Function(_Saved value)? saved,
+    TResult Function(_UploadImage value)? uploadImage,
+    required TResult orElse(),
+  }) {
+    if (uploadImage != null) {
+      return uploadImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UploadImage implements SessionFormEvent {
+  const factory _UploadImage() = _$_UploadImage;
+}
+
+/// @nodoc
 mixin _$SessionFormState {
   Session get session => throw _privateConstructorUsedError;
   AutovalidateMode get autoValidateMode => throw _privateConstructorUsedError;
+  String get downloadUrl => throw _privateConstructorUsedError;
+  bool get isUploading => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
   bool get isEditing => throw _privateConstructorUsedError;
   Option<Either<SessionFailure, Unit>> get saveFailureOrSuccessOption =>
@@ -1660,6 +1878,8 @@ abstract class $SessionFormStateCopyWith<$Res> {
   $Res call(
       {Session session,
       AutovalidateMode autoValidateMode,
+      String downloadUrl,
+      bool isUploading,
       bool isSaving,
       bool isEditing,
       Option<Either<SessionFailure, Unit>> saveFailureOrSuccessOption});
@@ -1682,6 +1902,8 @@ class _$SessionFormStateCopyWithImpl<$Res, $Val extends SessionFormState>
   $Res call({
     Object? session = null,
     Object? autoValidateMode = null,
+    Object? downloadUrl = null,
+    Object? isUploading = null,
     Object? isSaving = null,
     Object? isEditing = null,
     Object? saveFailureOrSuccessOption = null,
@@ -1695,6 +1917,14 @@ class _$SessionFormStateCopyWithImpl<$Res, $Val extends SessionFormState>
           ? _value.autoValidateMode
           : autoValidateMode // ignore: cast_nullable_to_non_nullable
               as AutovalidateMode,
+      downloadUrl: null == downloadUrl
+          ? _value.downloadUrl
+          : downloadUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      isUploading: null == isUploading
+          ? _value.isUploading
+          : isUploading // ignore: cast_nullable_to_non_nullable
+              as bool,
       isSaving: null == isSaving
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
@@ -1730,6 +1960,8 @@ abstract class _$$_SessionFormStateCopyWith<$Res>
   $Res call(
       {Session session,
       AutovalidateMode autoValidateMode,
+      String downloadUrl,
+      bool isUploading,
       bool isSaving,
       bool isEditing,
       Option<Either<SessionFailure, Unit>> saveFailureOrSuccessOption});
@@ -1751,6 +1983,8 @@ class __$$_SessionFormStateCopyWithImpl<$Res>
   $Res call({
     Object? session = null,
     Object? autoValidateMode = null,
+    Object? downloadUrl = null,
+    Object? isUploading = null,
     Object? isSaving = null,
     Object? isEditing = null,
     Object? saveFailureOrSuccessOption = null,
@@ -1764,6 +1998,14 @@ class __$$_SessionFormStateCopyWithImpl<$Res>
           ? _value.autoValidateMode
           : autoValidateMode // ignore: cast_nullable_to_non_nullable
               as AutovalidateMode,
+      downloadUrl: null == downloadUrl
+          ? _value.downloadUrl
+          : downloadUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      isUploading: null == isUploading
+          ? _value.isUploading
+          : isUploading // ignore: cast_nullable_to_non_nullable
+              as bool,
       isSaving: null == isSaving
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
@@ -1786,6 +2028,8 @@ class _$_SessionFormState implements _SessionFormState {
   const _$_SessionFormState(
       {required this.session,
       required this.autoValidateMode,
+      required this.downloadUrl,
+      required this.isUploading,
       required this.isSaving,
       required this.isEditing,
       required this.saveFailureOrSuccessOption});
@@ -1795,6 +2039,10 @@ class _$_SessionFormState implements _SessionFormState {
   @override
   final AutovalidateMode autoValidateMode;
   @override
+  final String downloadUrl;
+  @override
+  final bool isUploading;
+  @override
   final bool isSaving;
   @override
   final bool isEditing;
@@ -1803,7 +2051,7 @@ class _$_SessionFormState implements _SessionFormState {
 
   @override
   String toString() {
-    return 'SessionFormState(session: $session, autoValidateMode: $autoValidateMode, isSaving: $isSaving, isEditing: $isEditing, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'SessionFormState(session: $session, autoValidateMode: $autoValidateMode, downloadUrl: $downloadUrl, isUploading: $isUploading, isSaving: $isSaving, isEditing: $isEditing, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
@@ -1814,6 +2062,10 @@ class _$_SessionFormState implements _SessionFormState {
             (identical(other.session, session) || other.session == session) &&
             (identical(other.autoValidateMode, autoValidateMode) ||
                 other.autoValidateMode == autoValidateMode) &&
+            (identical(other.downloadUrl, downloadUrl) ||
+                other.downloadUrl == downloadUrl) &&
+            (identical(other.isUploading, isUploading) ||
+                other.isUploading == isUploading) &&
             (identical(other.isSaving, isSaving) ||
                 other.isSaving == isSaving) &&
             (identical(other.isEditing, isEditing) ||
@@ -1825,8 +2077,15 @@ class _$_SessionFormState implements _SessionFormState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, session, autoValidateMode,
-      isSaving, isEditing, saveFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      session,
+      autoValidateMode,
+      downloadUrl,
+      isUploading,
+      isSaving,
+      isEditing,
+      saveFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -1839,6 +2098,8 @@ abstract class _SessionFormState implements SessionFormState {
   const factory _SessionFormState(
       {required final Session session,
       required final AutovalidateMode autoValidateMode,
+      required final String downloadUrl,
+      required final bool isUploading,
       required final bool isSaving,
       required final bool isEditing,
       required final Option<Either<SessionFailure, Unit>>
@@ -1848,6 +2109,10 @@ abstract class _SessionFormState implements SessionFormState {
   Session get session;
   @override
   AutovalidateMode get autoValidateMode;
+  @override
+  String get downloadUrl;
+  @override
+  bool get isUploading;
   @override
   bool get isSaving;
   @override

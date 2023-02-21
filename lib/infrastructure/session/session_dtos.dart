@@ -80,7 +80,7 @@ abstract class GroceryItemDto implements _$GroceryItemDto {
       id: groceryItem.id.getOrCrash(),
       name: groceryItem.name.getOrCrash(),
       description: groceryItem.description.getOrCrash(),
-      image: '',
+      image: groceryItem.image,
       budgetedPrice: groceryItem.budgetedPrice.getOrCrash(),
       actualPrice: groceryItem.actualPrice,
       quantity: groceryItem.quantity.getOrCrash(),

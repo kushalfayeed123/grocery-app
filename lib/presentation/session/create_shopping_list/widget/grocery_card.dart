@@ -20,8 +20,9 @@ class GroceryCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const SizedBox(
+            SizedBox(
               height: 100,
+              child: Image.network(grocery.image),
             ),
             Container(
               alignment: Alignment.centerLeft,

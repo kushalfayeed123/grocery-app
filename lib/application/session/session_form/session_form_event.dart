@@ -19,4 +19,5 @@ class SessionFormEvent with _$SessionFormEvent {
   const factory SessionFormEvent.grocerySaved(
       KtList<GroceryItemPrimitive> groceries) = _GrocerySaved;
   const factory SessionFormEvent.saved() = _Saved;
+  const factory SessionFormEvent.uploadImage() = _UploadImage;
 }
