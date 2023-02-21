@@ -101,6 +101,14 @@ class AddGroceryButton extends StatelessWidget {
                                           SessionFormEvent.grocerySaved(
                                               context.formGroceries),
                                         );
+                                        bloc.add(
+                                          const SessionFormEvent
+                                              .totalBudgetedPriceChanged(),
+                                        );
+                                        bloc.add(
+                                          const SessionFormEvent
+                                              .totalActualPriceChanged(),
+                                        );
                                         Navigator.pop(context);
                                       });
                                     }),

@@ -24,8 +24,8 @@ mixin _$GroceryItemPrimitive {
   int get quantity => throw _privateConstructorUsedError;
   int get budgetedPrice => throw _privateConstructorUsedError;
   bool get isInCart => throw _privateConstructorUsedError;
-  bool get show => throw _privateConstructorUsedError;
-  DateTime get addedDate => throw _privateConstructorUsedError;
+  bool get show =>
+      throw _privateConstructorUsedError; // required DateTime addedDate,
   int get actualPrice => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -49,7 +49,6 @@ abstract class $GroceryItemPrimitiveCopyWith<$Res> {
       int budgetedPrice,
       bool isInCart,
       bool show,
-      DateTime addedDate,
       int actualPrice});
 }
 
@@ -76,7 +75,6 @@ class _$GroceryItemPrimitiveCopyWithImpl<$Res,
     Object? budgetedPrice = null,
     Object? isInCart = null,
     Object? show = null,
-    Object? addedDate = null,
     Object? actualPrice = null,
   }) {
     return _then(_value.copyWith(
@@ -116,10 +114,6 @@ class _$GroceryItemPrimitiveCopyWithImpl<$Res,
           ? _value.show
           : show // ignore: cast_nullable_to_non_nullable
               as bool,
-      addedDate: null == addedDate
-          ? _value.addedDate
-          : addedDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       actualPrice: null == actualPrice
           ? _value.actualPrice
           : actualPrice // ignore: cast_nullable_to_non_nullable
@@ -146,7 +140,6 @@ abstract class _$$_GroceryItemPrimitiveCopyWith<$Res>
       int budgetedPrice,
       bool isInCart,
       bool show,
-      DateTime addedDate,
       int actualPrice});
 }
 
@@ -170,7 +163,6 @@ class __$$_GroceryItemPrimitiveCopyWithImpl<$Res>
     Object? budgetedPrice = null,
     Object? isInCart = null,
     Object? show = null,
-    Object? addedDate = null,
     Object? actualPrice = null,
   }) {
     return _then(_$_GroceryItemPrimitive(
@@ -210,10 +202,6 @@ class __$$_GroceryItemPrimitiveCopyWithImpl<$Res>
           ? _value.show
           : show // ignore: cast_nullable_to_non_nullable
               as bool,
-      addedDate: null == addedDate
-          ? _value.addedDate
-          : addedDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       actualPrice: null == actualPrice
           ? _value.actualPrice
           : actualPrice // ignore: cast_nullable_to_non_nullable
@@ -235,7 +223,6 @@ class _$_GroceryItemPrimitive extends _GroceryItemPrimitive {
       required this.budgetedPrice,
       required this.isInCart,
       required this.show,
-      required this.addedDate,
       required this.actualPrice})
       : super._();
 
@@ -257,14 +244,13 @@ class _$_GroceryItemPrimitive extends _GroceryItemPrimitive {
   final bool isInCart;
   @override
   final bool show;
-  @override
-  final DateTime addedDate;
+// required DateTime addedDate,
   @override
   final int actualPrice;
 
   @override
   String toString() {
-    return 'GroceryItemPrimitive(id: $id, name: $name, description: $description, image: $image, category: $category, quantity: $quantity, budgetedPrice: $budgetedPrice, isInCart: $isInCart, show: $show, addedDate: $addedDate, actualPrice: $actualPrice)';
+    return 'GroceryItemPrimitive(id: $id, name: $name, description: $description, image: $image, category: $category, quantity: $quantity, budgetedPrice: $budgetedPrice, isInCart: $isInCart, show: $show, actualPrice: $actualPrice)';
   }
 
   @override
@@ -286,26 +272,13 @@ class _$_GroceryItemPrimitive extends _GroceryItemPrimitive {
             (identical(other.isInCart, isInCart) ||
                 other.isInCart == isInCart) &&
             (identical(other.show, show) || other.show == show) &&
-            (identical(other.addedDate, addedDate) ||
-                other.addedDate == addedDate) &&
             (identical(other.actualPrice, actualPrice) ||
                 other.actualPrice == actualPrice));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      description,
-      image,
-      category,
-      quantity,
-      budgetedPrice,
-      isInCart,
-      show,
-      addedDate,
-      actualPrice);
+  int get hashCode => Object.hash(runtimeType, id, name, description, image,
+      category, quantity, budgetedPrice, isInCart, show, actualPrice);
 
   @JsonKey(ignore: true)
   @override
@@ -326,7 +299,6 @@ abstract class _GroceryItemPrimitive extends GroceryItemPrimitive {
       required final int budgetedPrice,
       required final bool isInCart,
       required final bool show,
-      required final DateTime addedDate,
       required final int actualPrice}) = _$_GroceryItemPrimitive;
   const _GroceryItemPrimitive._() : super._();
 
@@ -348,9 +320,7 @@ abstract class _GroceryItemPrimitive extends GroceryItemPrimitive {
   bool get isInCart;
   @override
   bool get show;
-  @override
-  DateTime get addedDate;
-  @override
+  @override // required DateTime addedDate,
   int get actualPrice;
   @override
   @JsonKey(ignore: true)

@@ -36,17 +36,34 @@ class SessionFormBloc extends Bloc<SessionFormEvent, SessionFormState> {
                   state.copyWith(session: initialSession, isEditing: true)));
           return state;
         },
-        totalBudgetedPriceChanged: (e) {
+        totalBudgetedPriceChanged: (_) {
+          final budgetedPrices = state.session.groceries
+              .getOrCrash()
+              .map(
+                  (f) => f.budgetedPrice.getOrCrash() * f.quantity.getOrCrash())
+              .asList();
+
+          final totalBudgetPrice = budgetedPrices.reduce(
+            (acc, p1) => acc + p1,
+          );
           emit(state.copyWith(
-              session: state.session
-                  .copyWith(totalBudgetedPrice: ValidatedNumber(e.price)),
+              session: state.session.copyWith(
+                  totalBudgetedPrice: ValidatedNumber(totalBudgetPrice)),
               saveFailureOrSuccessOption: none()));
           return state;
         },
-        totalActualPriceChanged: (e) {
+        totalActualPriceChanged: (_) {
+          final actualPrices = state.session.groceries
+              .getOrCrash()
+              .map((f) => f.actualPrice * f.quantity.getOrCrash())
+              .asList();
+
+          final totalActualPrice = actualPrices.reduce(
+            (acc, p1) => acc + p1,
+          );
           emit(state.copyWith(
-              session: state.session
-                  .copyWith(totalActualPrice: ValidatedNumber(e.price)),
+              session:
+                  state.session.copyWith(totalActualPrice: totalActualPrice),
               saveFailureOrSuccessOption: none()));
           return state;
         },
@@ -95,20 +112,9 @@ class SessionFormBloc extends Bloc<SessionFormEvent, SessionFormState> {
         },
         saved: (_) async {
           Either<SessionFailure, Unit>? failureOrSuccess;
-          final budgetedPrices = state.session.groceries
-              .getOrCrash()
-              .map(
-                  (e) => e.budgetedPrice.getOrCrash() * e.quantity.getOrCrash())
-              .asList();
 
-          final totalBudgetPrice = budgetedPrices.reduce(
-            (acc, p1) => acc + p1,
-          );
           emit(state.copyWith(
             isSaving: true,
-            session: state.session.copyWith(
-                totalBudgetedPrice: ValidatedNumber(totalBudgetPrice),
-                totalActualPrice: ValidatedNumber(totalBudgetPrice)),
             saveFailureOrSuccessOption: none(),
           ));
 

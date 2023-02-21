@@ -25,7 +25,7 @@ Map<String, dynamic> _$$_SessionDtoToJson(_$_SessionDto instance) =>
       'totalActualPrice': instance.totalActualPrice,
       'createdDate': instance.createdDate.toIso8601String(),
       'scheduledDate': instance.scheduledDate.toIso8601String(),
-      'groceries': instance.groceries,
+      'groceries': instance.groceries.map((e) => e.toJson()).toList(),
     };
 
 _$_GroceryITemDto _$$_GroceryITemDtoFromJson(Map<String, dynamic> json) =>
@@ -40,7 +40,6 @@ _$_GroceryITemDto _$$_GroceryITemDtoFromJson(Map<String, dynamic> json) =>
       quantity: json['quantity'] as int,
       isInCart: json['isInCart'] as bool,
       show: json['show'] as bool,
-      addedDate: DateTime.parse(json['addedDate'] as String),
     );
 
 Map<String, dynamic> _$$_GroceryITemDtoToJson(_$_GroceryITemDto instance) =>
@@ -55,5 +54,4 @@ Map<String, dynamic> _$$_GroceryITemDtoToJson(_$_GroceryITemDto instance) =>
       'quantity': instance.quantity,
       'isInCart': instance.isInCart,
       'show': instance.show,
-      'addedDate': instance.addedDate.toIso8601String(),
     };

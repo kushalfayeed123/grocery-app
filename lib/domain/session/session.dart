@@ -16,7 +16,7 @@ abstract class Session implements _$Session {
     required UniqueId id,
     required SessionStatus status,
     required ValidatedNumber totalBudgetedPrice,
-    required ValidatedNumber totalActualPrice,
+    required int totalActualPrice,
     required DateTime createdDate,
     required DateTime scheduledDate,
     required GList<GroceryItem> groceries,
@@ -26,7 +26,7 @@ abstract class Session implements _$Session {
       id: UniqueId(),
       status: SessionStatus(Status.notStarted),
       totalBudgetedPrice: ValidatedNumber(1),
-      totalActualPrice: ValidatedNumber(1),
+      totalActualPrice: 0,
       createdDate: DateTime.now(),
       scheduledDate: DateTime.now(),
       groceries: GList(emptyList()));

@@ -2,10 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:grocery_app/domain/core/value_object.dart';
 import 'package:grocery_app/domain/session/grocery_item.dart';
-import 'package:kt_dart/collection.dart';
+import 'package:grocery_app/domain/session/session.dart';
+import 'package:grocery_app/domain/session/value_objects.dart';
+import 'package:kt_dart/kt.dart';
 
-import '../../domain/session/session.dart';
-import '../../domain/session/value_objects.dart';
 part 'session_dtos.freezed.dart';
 part 'session_dtos.g.dart';
 
@@ -27,7 +27,7 @@ abstract class SessionDto implements _$SessionDto {
       id: session.id.getOrCrash(),
       status: session.status.getOrCrash(),
       totalBudgetedPrice: session.totalBudgetedPrice.getOrCrash(),
-      totalActualPrice: session.totalActualPrice.getOrCrash(),
+      totalActualPrice: session.totalActualPrice,
       createdDate: session.createdDate,
       scheduledDate: session.scheduledDate,
       groceries: session.groceries
@@ -42,7 +42,7 @@ abstract class SessionDto implements _$SessionDto {
         id: UniqueId.fromUniqueString(id ?? ''),
         status: SessionStatus(status),
         totalBudgetedPrice: ValidatedNumber(totalBudgetedPrice),
-        totalActualPrice: ValidatedNumber(totalActualPrice),
+        totalActualPrice: totalActualPrice,
         createdDate: createdDate,
         scheduledDate: scheduledDate,
         groceries:
@@ -72,7 +72,7 @@ abstract class GroceryItemDto implements _$GroceryItemDto {
     required int quantity,
     required bool isInCart,
     required bool show,
-    required DateTime addedDate,
+    // required DateTime addedDate,
   }) = _GroceryITemDto;
 
   factory GroceryItemDto.fromDomain(GroceryItem groceryItem) {
@@ -80,13 +80,13 @@ abstract class GroceryItemDto implements _$GroceryItemDto {
       id: groceryItem.id.getOrCrash(),
       name: groceryItem.name.getOrCrash(),
       description: groceryItem.description.getOrCrash(),
-      image: groceryItem.image,
+      image: '',
       budgetedPrice: groceryItem.budgetedPrice.getOrCrash(),
-      actualPrice: groceryItem.actualPrice.getOrCrash(),
+      actualPrice: groceryItem.actualPrice,
       quantity: groceryItem.quantity.getOrCrash(),
       isInCart: groceryItem.isInCart,
       show: groceryItem.show,
-      addedDate: groceryItem.addedDate,
+      // addedDate: groceryItem.addedDate,
       category: groceryItem.category.getOrCrash(),
     );
   }
@@ -99,9 +99,9 @@ abstract class GroceryItemDto implements _$GroceryItemDto {
         category: GroceryCategory(category),
         quantity: ValidatedNumber(quantity),
         budgetedPrice: ValidatedNumber(budgetedPrice),
-        actualPrice: ValidatedNumber(actualPrice),
+        actualPrice: actualPrice,
         image: image,
-        addedDate: addedDate,
+        // addedDate: addedDate,
         isInCart: isInCart,
         show: show);
   }

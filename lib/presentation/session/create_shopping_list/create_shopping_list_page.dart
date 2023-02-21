@@ -7,6 +7,7 @@ import 'package:grocery_app/application/session/session_form/session_form_bloc.d
 import 'package:grocery_app/injection.dart';
 import 'package:grocery_app/presentation/session/create_shopping_list/widget/add_grocery_button.dart';
 import 'package:grocery_app/presentation/session/create_shopping_list/widget/shopping_date_field.dart';
+import 'package:intl/intl.dart';
 
 import '../../../domain/session/session.dart';
 import '../../core/button.dart';
@@ -35,9 +36,12 @@ class CreateShoppingListPage extends StatelessWidget {
                       unableToUpdate: (_) => 'Could not update the note.',
                     ),
                   ).show(context),
-                  (_) => context.router.popUntil(
-                    (route) => route.settings.name == '',
-                  ),
+                  (_) {
+                    FlushbarHelper.createSuccess(
+                            message:
+                                'Shopping list has been created and a reminder has been set for ${DateFormat.yMMMEd().format(state.session.scheduledDate)}')
+                        .show(context);
+                  },
                 )),
         buildWhen: (p, c) => p.isSaving != c.isSaving,
         builder: (context, state) => Stack(
@@ -67,7 +71,16 @@ class SessionFormPageScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        leading: GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: Center(
+            child: Icon(
+              Icons.arrow_back_ios_new,
+              size: 20,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
+        ),
         centerTitle: true,
         elevation: 0,
         toolbarHeight: MediaQuery.of(context).size.height * 0.1,
@@ -116,6 +129,7 @@ class SessionFormPageScaffold extends StatelessWidget {
                         },
                         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                             childAspectRatio: 0.8,
+                            mainAxisSpacing: 20,
                             maxCrossAxisExtent:
                                 MediaQuery.of(context).size.width / 2),
                       )),
@@ -123,9 +137,6 @@ class SessionFormPageScaffold extends StatelessWidget {
                   ],
                 ),
               ),
-              SavingInProgressOverlay(
-                isSaving: state.isSaving,
-              )
             ],
           );
         },
@@ -133,25 +144,14 @@ class SessionFormPageScaffold extends StatelessWidget {
       bottomNavigationBar: Container(
         height: 60,
         padding: const EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            CustomButton(
-              text: 'CANCEL',
-              width: MediaQuery.of(context).size.width * 0.45,
-              color: Theme.of(context).colorScheme.surface,
-              onTap: () {},
-            ),
-            CustomButton(
-              text: 'SAVE LIST',
-              width: MediaQuery.of(context).size.width * 0.45,
-              onTap: () {
-                context.read<SessionFormBloc>().add(
-                      const SessionFormEvent.saved(),
-                    );
-              },
-            ),
-          ],
+        child: CustomButton(
+          text: 'SAVE LIST',
+          width: MediaQuery.of(context).size.width * 0.45,
+          onTap: () {
+            context.read<SessionFormBloc>().add(
+                  const SessionFormEvent.saved(),
+                );
+          },
         ),
       ),
     );
@@ -184,7 +184,7 @@ class SavingInProgressOverlay extends StatelessWidget {
                 height: 8,
               ),
               Text(
-                'saving',
+                'saving...',
                 style: Theme.of(context).textTheme.bodyMedium,
               )
             ],

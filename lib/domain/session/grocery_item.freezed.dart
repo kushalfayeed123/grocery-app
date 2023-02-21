@@ -22,9 +22,9 @@ mixin _$GroceryItem {
   GroceryCategory get category => throw _privateConstructorUsedError;
   ValidatedNumber get quantity => throw _privateConstructorUsedError;
   ValidatedNumber get budgetedPrice => throw _privateConstructorUsedError;
-  ValidatedNumber get actualPrice => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
-  DateTime get addedDate => throw _privateConstructorUsedError;
+  int get actualPrice => throw _privateConstructorUsedError;
+  String get image =>
+      throw _privateConstructorUsedError; // required DateTime addedDate,
   bool get isInCart => throw _privateConstructorUsedError;
   bool get show => throw _privateConstructorUsedError;
 
@@ -46,9 +46,8 @@ abstract class $GroceryItemCopyWith<$Res> {
       GroceryCategory category,
       ValidatedNumber quantity,
       ValidatedNumber budgetedPrice,
-      ValidatedNumber actualPrice,
+      int actualPrice,
       String image,
-      DateTime addedDate,
       bool isInCart,
       bool show});
 }
@@ -74,7 +73,6 @@ class _$GroceryItemCopyWithImpl<$Res, $Val extends GroceryItem>
     Object? budgetedPrice = null,
     Object? actualPrice = null,
     Object? image = null,
-    Object? addedDate = null,
     Object? isInCart = null,
     Object? show = null,
   }) {
@@ -106,15 +104,11 @@ class _$GroceryItemCopyWithImpl<$Res, $Val extends GroceryItem>
       actualPrice: null == actualPrice
           ? _value.actualPrice
           : actualPrice // ignore: cast_nullable_to_non_nullable
-              as ValidatedNumber,
+              as int,
       image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      addedDate: null == addedDate
-          ? _value.addedDate
-          : addedDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       isInCart: null == isInCart
           ? _value.isInCart
           : isInCart // ignore: cast_nullable_to_non_nullable
@@ -142,9 +136,8 @@ abstract class _$$_GroceryItemCopyWith<$Res>
       GroceryCategory category,
       ValidatedNumber quantity,
       ValidatedNumber budgetedPrice,
-      ValidatedNumber actualPrice,
+      int actualPrice,
       String image,
-      DateTime addedDate,
       bool isInCart,
       bool show});
 }
@@ -168,7 +161,6 @@ class __$$_GroceryItemCopyWithImpl<$Res>
     Object? budgetedPrice = null,
     Object? actualPrice = null,
     Object? image = null,
-    Object? addedDate = null,
     Object? isInCart = null,
     Object? show = null,
   }) {
@@ -200,15 +192,11 @@ class __$$_GroceryItemCopyWithImpl<$Res>
       actualPrice: null == actualPrice
           ? _value.actualPrice
           : actualPrice // ignore: cast_nullable_to_non_nullable
-              as ValidatedNumber,
+              as int,
       image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
-      addedDate: null == addedDate
-          ? _value.addedDate
-          : addedDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       isInCart: null == isInCart
           ? _value.isInCart
           : isInCart // ignore: cast_nullable_to_non_nullable
@@ -233,7 +221,6 @@ class _$_GroceryItem extends _GroceryItem {
       required this.budgetedPrice,
       required this.actualPrice,
       required this.image,
-      required this.addedDate,
       required this.isInCart,
       required this.show})
       : super._();
@@ -251,11 +238,10 @@ class _$_GroceryItem extends _GroceryItem {
   @override
   final ValidatedNumber budgetedPrice;
   @override
-  final ValidatedNumber actualPrice;
+  final int actualPrice;
   @override
   final String image;
-  @override
-  final DateTime addedDate;
+// required DateTime addedDate,
   @override
   final bool isInCart;
   @override
@@ -263,7 +249,7 @@ class _$_GroceryItem extends _GroceryItem {
 
   @override
   String toString() {
-    return 'GroceryItem(id: $id, name: $name, description: $description, category: $category, quantity: $quantity, budgetedPrice: $budgetedPrice, actualPrice: $actualPrice, image: $image, addedDate: $addedDate, isInCart: $isInCart, show: $show)';
+    return 'GroceryItem(id: $id, name: $name, description: $description, category: $category, quantity: $quantity, budgetedPrice: $budgetedPrice, actualPrice: $actualPrice, image: $image, isInCart: $isInCart, show: $show)';
   }
 
   @override
@@ -284,8 +270,6 @@ class _$_GroceryItem extends _GroceryItem {
             (identical(other.actualPrice, actualPrice) ||
                 other.actualPrice == actualPrice) &&
             (identical(other.image, image) || other.image == image) &&
-            (identical(other.addedDate, addedDate) ||
-                other.addedDate == addedDate) &&
             (identical(other.isInCart, isInCart) ||
                 other.isInCart == isInCart) &&
             (identical(other.show, show) || other.show == show));
@@ -293,7 +277,7 @@ class _$_GroceryItem extends _GroceryItem {
 
   @override
   int get hashCode => Object.hash(runtimeType, id, name, description, category,
-      quantity, budgetedPrice, actualPrice, image, addedDate, isInCart, show);
+      quantity, budgetedPrice, actualPrice, image, isInCart, show);
 
   @JsonKey(ignore: true)
   @override
@@ -310,9 +294,8 @@ abstract class _GroceryItem extends GroceryItem {
       required final GroceryCategory category,
       required final ValidatedNumber quantity,
       required final ValidatedNumber budgetedPrice,
-      required final ValidatedNumber actualPrice,
+      required final int actualPrice,
       required final String image,
-      required final DateTime addedDate,
       required final bool isInCart,
       required final bool show}) = _$_GroceryItem;
   const _GroceryItem._() : super._();
@@ -330,12 +313,10 @@ abstract class _GroceryItem extends GroceryItem {
   @override
   ValidatedNumber get budgetedPrice;
   @override
-  ValidatedNumber get actualPrice;
+  int get actualPrice;
   @override
   String get image;
-  @override
-  DateTime get addedDate;
-  @override
+  @override // required DateTime addedDate,
   bool get isInCart;
   @override
   bool get show;

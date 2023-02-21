@@ -19,7 +19,7 @@ mixin _$Session {
   UniqueId get id => throw _privateConstructorUsedError;
   SessionStatus get status => throw _privateConstructorUsedError;
   ValidatedNumber get totalBudgetedPrice => throw _privateConstructorUsedError;
-  ValidatedNumber get totalActualPrice => throw _privateConstructorUsedError;
+  int get totalActualPrice => throw _privateConstructorUsedError;
   DateTime get createdDate => throw _privateConstructorUsedError;
   DateTime get scheduledDate => throw _privateConstructorUsedError;
   GList<GroceryItem> get groceries => throw _privateConstructorUsedError;
@@ -37,7 +37,7 @@ abstract class $SessionCopyWith<$Res> {
       {UniqueId id,
       SessionStatus status,
       ValidatedNumber totalBudgetedPrice,
-      ValidatedNumber totalActualPrice,
+      int totalActualPrice,
       DateTime createdDate,
       DateTime scheduledDate,
       GList<GroceryItem> groceries});
@@ -80,7 +80,7 @@ class _$SessionCopyWithImpl<$Res, $Val extends Session>
       totalActualPrice: null == totalActualPrice
           ? _value.totalActualPrice
           : totalActualPrice // ignore: cast_nullable_to_non_nullable
-              as ValidatedNumber,
+              as int,
       createdDate: null == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
@@ -108,7 +108,7 @@ abstract class _$$_SessionCopyWith<$Res> implements $SessionCopyWith<$Res> {
       {UniqueId id,
       SessionStatus status,
       ValidatedNumber totalBudgetedPrice,
-      ValidatedNumber totalActualPrice,
+      int totalActualPrice,
       DateTime createdDate,
       DateTime scheduledDate,
       GList<GroceryItem> groceries});
@@ -148,7 +148,7 @@ class __$$_SessionCopyWithImpl<$Res>
       totalActualPrice: null == totalActualPrice
           ? _value.totalActualPrice
           : totalActualPrice // ignore: cast_nullable_to_non_nullable
-              as ValidatedNumber,
+              as int,
       createdDate: null == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
@@ -185,7 +185,7 @@ class _$_Session extends _Session {
   @override
   final ValidatedNumber totalBudgetedPrice;
   @override
-  final ValidatedNumber totalActualPrice;
+  final int totalActualPrice;
   @override
   final DateTime createdDate;
   @override
@@ -233,7 +233,7 @@ abstract class _Session extends Session {
       {required final UniqueId id,
       required final SessionStatus status,
       required final ValidatedNumber totalBudgetedPrice,
-      required final ValidatedNumber totalActualPrice,
+      required final int totalActualPrice,
       required final DateTime createdDate,
       required final DateTime scheduledDate,
       required final GList<GroceryItem> groceries}) = _$_Session;
@@ -246,7 +246,7 @@ abstract class _Session extends Session {
   @override
   ValidatedNumber get totalBudgetedPrice;
   @override
-  ValidatedNumber get totalActualPrice;
+  int get totalActualPrice;
   @override
   DateTime get createdDate;
   @override

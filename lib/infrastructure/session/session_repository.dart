@@ -5,7 +5,6 @@ import 'package:grocery_app/infrastructure/core/firestore_helpers.dart';
 import 'package:grocery_app/infrastructure/session/session_dtos.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:kt_dart/src/collection/kt_list.dart';
 import 'package:rxdart/rxdart.dart';
 
 import 'package:grocery_app/domain/session/session_failure.dart';
