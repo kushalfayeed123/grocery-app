@@ -1,14 +1,10 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:grocery_app/application/session/session_form/session_form_bloc.dart';
 import 'package:grocery_app/presentation/core/button.dart';
 import 'package:grocery_app/presentation/session/misc/build_context_x.dart';
 import 'package:grocery_app/presentation/session/misc/grocery_item_presentation_classes.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../domain/session/value_objects.dart';
